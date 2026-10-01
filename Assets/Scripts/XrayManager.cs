@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 public class XrayManager : MonoBehaviour
 {
     public bool XrayState = false;
-    public GameObject ToggleableObject;
-    
+    public GameObject[] XrayObjects;
+    public GameObject[] VisibleObjects;
     void Start()
     {
         
@@ -21,30 +21,16 @@ public class XrayManager : MonoBehaviour
         //    Debug.Log("XrayState flipped!!!");
         //}
 
-
-        if (gameObject.tag == "Xray")
+        if (XrayState == true)
         {
-            if (XrayState == true)
-            {
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                gameObject.SetActive(false);
-
-            }
+            XrayObjects[0].SetActive(true);
+            VisibleObjects[0].SetActive(false);
+        }
+        else
+        {
+            XrayObjects[0].SetActive(false);
+            VisibleObjects[0].SetActive(true);
         }
 
-        if (gameObject.tag == "Visible")
-        {
-            if (XrayState == true)
-            {
-                gameObject.SetActive(false);
-            }
-            else
-            {
-                gameObject.SetActive(true);
-            }
-        }
     }
 }
