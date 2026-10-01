@@ -9,28 +9,35 @@ public class XrayManager : MonoBehaviour
     public GameObject[] VisibleObjects;
     void Start()
     {
-        
+        ActivateXray();
     }
 
     void Update()
     {
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    Debug.Log("Space bar pressed");
-        //    XrayState = !XrayState;
-        //    Debug.Log("XrayState flipped!!!");
-        //}
+        
+    }
+    
+    public void OnXrayToggle(InputAction.CallbackContext context)
+    {
+        //Als dit niet de eerste x is dat je signaal binnenkrijgt dan stopt ie meteen.
+        if (!context.started)
+            return;
+       
+        XrayState = !XrayState;
 
-        if (XrayState == true)
+        ActivateXray();
+    }
+
+    public void ActivateXray()
+    {
+        foreach (GameObject XrayObject in XrayObjects)
         {
-            XrayObjects[0].SetActive(true);
-            VisibleObjects[0].SetActive(false);
-        }
-        else
-        {
-            XrayObjects[0].SetActive(false);
-            VisibleObjects[0].SetActive(true);
+            XrayObject.SetActive(XrayState);
         }
 
+        foreach (GameObject visibleObject in VisibleObjects)
+        {
+            visibleObject.SetActive(!XrayState);
+        }
     }
 }
