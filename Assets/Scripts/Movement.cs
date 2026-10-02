@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Movement : MonoBehaviour
+public class Movement: MonoBehaviour
 {
     PlayerInput playerInput;
     InputAction moveAction;
@@ -14,11 +14,10 @@ public class Movement : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
     }
-
     // Update is called once per frame
     void Update()
     {
-        
+       MovePlayer(); 
     }
 
     void MovePlayer()
