@@ -10,6 +10,7 @@ public class Movement: MonoBehaviour
 
     void Start()
     {
+        //zorgt ervoor dat dit script de inputsystem vind
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
     }
@@ -20,6 +21,7 @@ public class Movement: MonoBehaviour
 
     public void MovePlayer()
     {
+            //zorgt ervoor dat de speler horizontaal kan bewegen
         Vector2 direction = moveAction.ReadValue<Vector2>();
         transform.position += new Vector3(direction.x, 0, direction.y)* moveSpeed * Time.deltaTime;    
     }
