@@ -1,50 +1,19 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour
+public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    float _dis;
-    GameObject dragTestObj;
+    Canvas canvas;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    GameObject dragTestObj;
+    Vector3 dragOffset;
+
+    RectTransform canvasRect;
+
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            print("MouseDown");
-
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue()), out RaycastHit hit))
-            {
-                if (hit.collider.gameObject.layer != LayerMask.GetMask("Ignore Raycast"))
-                {
-                    _dis = Vector3.Distance(Camera.main.transform.position, hit.collider.gameObject.transform.position);
-                    dragTestObj = hit.collider.gameObject;
-                }
-            }
-
-        }
-        if (Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            print("MouseUp");
-            dragTestObj = null;
-        }
-
-        if (dragTestObj != null)
-        {
-            Vector3 mousePos = Mouse.current.position.ReadValue();
-            mousePos.z = Camera.main.farClipPlane * .1f;
-            Vector3 worldPoint = Camera.main.ScreenToWorldPoint(mousePos);
-
-            Vector3 point = Vector3.MoveTowards(Camera.main.transform.position, worldPoint, _dis);
-
-            dragTestObj.transform.position = point;
-        }
+        canvas = GetComponent<Canvas>();
+        canvasRect = GetComponent<RectTransform>();
     }
 
     public void ClickTest()
@@ -52,4 +21,37 @@ public class DragAndDrop : MonoBehaviour
         print("Hello World!");
     }
 
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        RaycastResult obj = eventData.pointerCurrentRaycast;
+        if (obj.gameObject.CompareTag("Draggable"))
+        {
+            dragTestObj = obj.gameObject;
+
+            Vector3 pos = canvas.transform.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition);
+            pos.z = 0;
+
+            dragOffset = dragTestObj.transform.localPosition - pos;
+            dragTestObj.transform.SetAsLastSibling();
+        }
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        dragTestObj = null;
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (dragTestObj != null)
+        {
+            Vector3 pos = canvas.transform.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition) + dragOffset;
+            pos.z = 0;
+
+            pos.x = Mathf.Clamp(pos.x, canvasRect.rect.xMin, canvasRect.rect.xMax);
+            pos.y = Mathf.Clamp(pos.y, canvasRect.rect.yMin, canvasRect.rect.yMax);
+
+            dragTestObj.transform.localPosition = pos;
+        }
+    }
 }
