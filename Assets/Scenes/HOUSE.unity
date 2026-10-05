@@ -562,13 +562,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6027245814769284217, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: m_Name
       value: Denverhouse (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3515717276090252278, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4974984522306558807, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050422055867433376, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -687,7 +699,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2118816227
 MonoBehaviour:
   m_ObjectHideFlags: 0
