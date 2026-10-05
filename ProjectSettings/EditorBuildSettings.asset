@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/TiboTesting.unity
+    guid: 2c2b72bd008b9b84fa4503e7741b2d6d
+  - enabled: 1
     path: Assets/Scenes/robie-scene.unity
     guid: d2673e1acb6a7dac0baec84c8c94553d
   m_configObjects:
