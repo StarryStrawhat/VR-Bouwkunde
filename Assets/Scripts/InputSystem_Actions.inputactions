@@ -503,6 +503,17 @@
                     "action": "XrayToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "89a97aaa-beb8-454e-b4fc-b2f9494e6c4a",
+                    "path": "<QuestTouchPlusController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "XrayToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
