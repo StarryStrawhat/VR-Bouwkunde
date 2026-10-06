@@ -21,7 +21,7 @@ public class TypewriterEffect : MonoBehaviour
         textLabel.text = string.Empty;
 
         //bepaald hoe lang het duurt voordat de text verschijnt
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
 
         float t = 0;
         int charIndex = 0;

@@ -13,5 +13,10 @@ MonoBehaviour:
   m_Name: Test
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Mijn bus reed vandaag voorbij mijn neus weg
-  - Het was een evil buschauffeur
+  - Hallo, ik heb een probleem
+  - Zou jij mij hiermee kunnen helpen?
+  responses:
+  - responseText: Accept
+    dialogueObject: {fileID: 11400000, guid: b1784a055ee52cf4aa9896ca600a0232, type: 2}
+  - responseText: Reject
+    dialogueObject: {fileID: 11400000, guid: e19e7692d3b57144b8353e07d2e962ac, type: 2}
