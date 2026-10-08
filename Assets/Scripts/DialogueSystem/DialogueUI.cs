@@ -2,30 +2,36 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using Unity.VisualScripting;
 
 public class DialogueUI: MonoBehaviour
 {
     //References naar dingen
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
-    [SerializeField] private DialogueObject testDialogue; 
     [SerializeField] private InputActionReference nextDialogueAction;
+
+    [SerializeField] public GameObject dialogueTrigger;
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
+    private bool isDialogueRunning;
 
-// Bepaald wat er in de textbox komt te staan
+
+    // Bepaald wat er in de textbox komt te staan
     private void Start()
     {
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogueBox();
-        ShowDialogue(testDialogue);
     }
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        StopAllCoroutines();
+
+        isDialogueRunning = (true);
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }   
@@ -53,8 +59,9 @@ public class DialogueUI: MonoBehaviour
         }
     }
     private void CloseDialogueBox()
-    { 
+    {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        isDialogueRunning = false;
     }
 }
