@@ -40,9 +40,6 @@ public class CluesManager : MonoBehaviour
 
         clue.img = clueObj.GetComponent<Image>();
 
-        // this _should_ work
-
-
         clue.ID = NextID();
         clue.Title = title;
         clue.Description = description;

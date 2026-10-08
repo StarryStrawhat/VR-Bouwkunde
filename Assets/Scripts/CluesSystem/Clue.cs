@@ -22,14 +22,8 @@ public class Clue : MonoBehaviour
     }
     public Sprite Image
     {
-        set
-        {
-            img.sprite = value;
-        }
-        get
-        {
-            return img.sprite;
-        }
+        set { img.sprite = value; }
+        get { return img.sprite; }
     }
 
 }

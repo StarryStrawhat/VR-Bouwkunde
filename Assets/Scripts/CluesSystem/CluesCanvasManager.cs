@@ -9,9 +9,7 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
     GameObject dragTestObj;
     Vector3 dragOffset;
 
-
     public static CluesCanvasManager Instance;
-
 
     void Start()
     {
