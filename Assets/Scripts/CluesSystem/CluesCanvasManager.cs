@@ -1,19 +1,22 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragAndDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
-    Canvas canvas;
+    public Canvas canvas;
+    public RectTransform canvasRect;
 
     GameObject dragTestObj;
     Vector3 dragOffset;
 
-    RectTransform canvasRect;
+
+    public static CluesCanvasManager Instance;
+
 
     void Start()
     {
-        canvas = GetComponent<Canvas>();
-        canvasRect = GetComponent<RectTransform>();
+        if (Instance == null)
+            Instance = this;
     }
 
     public void ClickTest()
