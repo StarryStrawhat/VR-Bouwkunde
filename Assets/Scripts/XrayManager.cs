@@ -4,11 +4,23 @@ using UnityEngine.InputSystem;
 
 public class XrayManager : MonoBehaviour
 {
+    [Header("State and Objects")] 
     //Boolean die regelt of Xray aan of uit staat.
     //Daaronder staan 2 arrays waar je alle Xray & Visible tagged objecten in kan slepen in de Inspector.
     public bool XrayState = false;
     public GameObject[] XrayObjects;
     public GameObject[] VisibleObjects;
+
+    [Header("Materials")]
+    public Material XrayMaterial;
+    public Material VisibleMaterial;
+
+    public enum SurfaceType
+    {
+        Opaque,
+        Transparent
+    }
+
     void Start()
     {
         //Deze staat hier om de Xray direct te activeren en niet pas wanneer je op spacebar klikt.
@@ -42,5 +54,28 @@ public class XrayManager : MonoBehaviour
         {
             visibleObject.SetActive(!XrayState);
         }
+
+        SwapMaterial();
+
+        ChangeSurfaceType();
+        
+    }
+
+    public void SwapMaterial()
+    {
+        
+    }
+
+    public void ChangeSurfaceType()
+    {
+        
+    }
+    public void OpaqueSurfaceType()
+    {
+        VisibleMaterial.SetFloat("_Surface", (float)SurfaceType.Opaque);
+    }
+    public void TransparentSurfaceType()
+    {
+        VisibleMaterial.SetFloat("_Surface", (float)SurfaceType.Transparent);
     }
 }
