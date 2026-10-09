@@ -44,7 +44,7 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (dragTestObj != null)
+        if (dragTestObj != null && eventData.pointerCurrentRaycast.isValid)
         {
             Vector3 pos = canvas.transform.InverseTransformPoint(eventData.pointerCurrentRaycast.worldPosition) + dragOffset;
             pos.z = 0;
