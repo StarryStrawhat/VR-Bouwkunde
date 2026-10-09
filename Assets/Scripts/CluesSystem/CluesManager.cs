@@ -61,5 +61,14 @@ public class CluesManager : MonoBehaviour
 
         return null;
     }
+
+    public Clue GetClue(int id)
+    {
+        return clues.Find(clue => clue.ID == id);
+    }
+    public Clue GetClue(string title)
+    {
+        return clues.Find(clue => clue.Title == title);
+    }
 }
 
