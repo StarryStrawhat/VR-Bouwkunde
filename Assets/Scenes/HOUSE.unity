@@ -566,10 +566,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4096863700847540117, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cdda7091f345051479a42caced40cedd, type: 2}
+    - target: {fileID: -2090608591832345471, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: m_Name
       value: Denverhouse (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2786534777698132407, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 05f6b17e197cb8749bcb0a4536ea2c1d, type: 2}
     - target: {fileID: 3515717276090252278, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -587,7 +599,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5050422055867433376, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
