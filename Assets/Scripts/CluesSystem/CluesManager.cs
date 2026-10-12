@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -8,11 +7,13 @@ public class CluesManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject CluePrefab;
+    [SerializeField] private GameObject ConnectionPrefab;
+
     [SerializeField] private Sprite defaultImage;
 
     private int _idTracker = 0;
     public List<Clue> clues = new();
-    public List<Tuple<int, int>> Connections = new();
+    public List<Connection> Connections = new();
 
     public static CluesManager Instance;
 
@@ -26,7 +27,17 @@ public class CluesManager : MonoBehaviour
     {
         return _idTracker++;
     }
+    public Connection NewConnection()
+    {
+        GameObject connectionObj = Instantiate(ConnectionPrefab, CluesCanvasManager.Instance.canvas.gameObject.transform);
+        Connection connection = connectionObj.AddComponent<Connection>();
 
+        connection.rectTransform = connection.GetComponent<RectTransform>();
+        connection.image = connection.GetComponent<Image>();
+
+
+        return connection;
+    }
     public Clue NewClue(string title, string description)
     {
         GameObject clueObj = Instantiate(CluePrefab, CluesCanvasManager.Instance.canvas.gameObject.transform);
@@ -50,16 +61,16 @@ public class CluesManager : MonoBehaviour
         return clue;
     }
 
-    public void ConnectClues(int clue1, int clue2)
+    public void ConnectClues(Clue clue1, Clue clue2)
     {
-        Instance.Connections.Add(new(clue1, clue2));
+        Instance.Connections.Add(new() { clue1 = clue1, clue2 = clue2 });
     }
 
-    public Clue[] GetConnections(int clueID)
+    public List<Connection> GetConnections(int clueID)
     {
-        print(Instance.Connections.FindAll(x => x.Item1 == clueID));
+        List<Connection> connections = Instance.Connections.FindAll(x => x.clue1.ID == clueID || x.clue2.ID == clueID);
 
-        return null;
+        return connections;
     }
 
     public Clue GetClue(int id)
@@ -70,5 +81,5 @@ public class CluesManager : MonoBehaviour
     {
         return clues.Find(clue => clue.Title == title);
     }
-}
 
+}

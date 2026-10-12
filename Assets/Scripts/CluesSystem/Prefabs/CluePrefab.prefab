@@ -285,7 +285,6 @@ GameObject:
   - component: {fileID: 5575934784627214260}
   - component: {fileID: 1139109046382073291}
   - component: {fileID: 3941195844782858104}
-  - component: {fileID: 3953167345601545244}
   m_Layer: 5
   m_Name: CluePrefab
   m_TagString: Draggable
@@ -352,19 +351,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3953167345601545244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8103088688738623425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a403c5bcd23f3942afa94d99b05b9d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Clue
-  tmpTitle: {fileID: 7514997096770510028}
-  tmpDescription: {fileID: 1579944033897979738}
-  img: {fileID: 3941195844782858104}
-  ID: 0

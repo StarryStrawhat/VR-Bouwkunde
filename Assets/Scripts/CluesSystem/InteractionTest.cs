@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InteractionTest : MonoBehaviour
 {
-    public void btn_addclue()
+    public void BtnAddclue()
     {
         CluesManager.Instance.NewClue("Test Clue", "This is a test!");
         CluesManager.Instance.NewClue("Hello World!", "");
