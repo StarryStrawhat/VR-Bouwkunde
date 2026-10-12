@@ -1765,7 +1765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c2ee44c3c410d4caa76768857d19eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  mode: 1
+  mode: 0
   canvas: {fileID: 1646294341}
   canvasRect: {fileID: 1646294342}
 --- !u!114 &1646294345
