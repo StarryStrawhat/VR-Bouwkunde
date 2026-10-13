@@ -18,7 +18,7 @@ public class DialogueUI: MonoBehaviour
     private bool isDialogueRunning;
 
 
-    // Bepaald wat er in de textbox komt te staan
+    // Bij het opstarten zorgt dit ervoor dat hij de script van de typewriter effect en responsehandler ophaalt en maakt de dialogebox leeg
     private void Start()
     {
         typewriterEffect = GetComponent<TypewriterEffect>();
@@ -27,6 +27,7 @@ public class DialogueUI: MonoBehaviour
         CloseDialogueBox();
     }
 
+    // stopt alle processen die bezig waren in de canvas bij opstart en start alles wat in de canvas staat
     public void ShowDialogue(DialogueObject dialogueObject)
     {
         StopAllCoroutines();
@@ -38,7 +39,7 @@ public class DialogueUI: MonoBehaviour
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
-        //Dialogue progressie zoals next dialogue
+        //Dialogue progressie houd in dat hij hier kijkt hoeveel dialogue er is, zijn er responses. Als er geen mogelijke dialogue is sluit hij de dialogue
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
@@ -58,7 +59,9 @@ public class DialogueUI: MonoBehaviour
             CloseDialogueBox();
         }
     }
-    private void CloseDialogueBox()
+
+    // Sluit de dialogue
+    public void CloseDialogueBox()
     {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
