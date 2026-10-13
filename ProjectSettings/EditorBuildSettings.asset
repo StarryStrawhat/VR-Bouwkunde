@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/robie-scene.unity
-    guid: d2673e1acb6a7dac0baec84c8c94553d
+    path: Assets/Scenes/MainMenu.unity
+    guid: de9b12dc5acb280fb98c262cae5f7dd2
+  - enabled: 1
+    path: Assets/Scenes/camera.unity
+    guid: 7ddc3470d8d242f60a2c97e825e29c84
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 6c743fc8c2e138047aab66dc98116c53, type: 2}
