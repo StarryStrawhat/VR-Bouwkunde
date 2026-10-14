@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/HOUSE.unity
+    guid: 681e4d53003b88e4bb5a4ffd38c82eac
+  - enabled: 0
     path: Assets/Scenes/robie-scene.unity
     guid: d2673e1acb6a7dac0baec84c8c94553d
   m_configObjects:
