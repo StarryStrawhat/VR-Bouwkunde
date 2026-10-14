@@ -95,16 +95,6 @@
                     "interactions": "",
                     "initialStateCheck": false,
                     "priority": 0
-                },
-                {
-                    "name": "XrayToggle",
-                    "type": "Button",
-                    "id": "56fc0a58-84a9-4ee6-a9d1-15272f96a03d",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false,
-                    "priority": 0
                 }
             ],
             "bindings": [
@@ -490,28 +480,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "784e92b0-6fc8-4a27-ab93-578636be6f73",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "XrayToggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "523bde91-548d-4592-b582-51c163f9e53e",
-                    "path": "<QuestTouchPlusController>{LeftHand}/primaryButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";XR",
-                    "action": "XrayToggle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
