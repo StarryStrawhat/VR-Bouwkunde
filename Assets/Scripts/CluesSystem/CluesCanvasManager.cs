@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
@@ -14,9 +15,15 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
 
     public Canvas canvas;
     public RectTransform canvasRect;
+    public Image dragBtnImage;
+    public Image connectBtnImage;
+
+    public GameObject objectsGroup;
+
 
     GameObject dragTestObj;
     Vector3 dragOffset;
+
 
     private Connection connecting;
 
@@ -26,6 +33,10 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
     {
         if (Instance == null)
             Instance = this;
+
+        mode = DragMode.Dragging;
+        dragBtnImage.color = Color.green;
+        connectBtnImage.color = Color.white;
     }
 
     public void ClickTest()
@@ -56,7 +67,7 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
                 connecting = CluesManager.Instance.NewConnection();
                 connecting.clue1 = clue;
 
-                connecting.transform.SetAsLastSibling();
+                connecting.transform.SetAsFirstSibling();
             }
         }
     }
@@ -119,6 +130,7 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
                     connecting.UpdateLine(connecting.clue1, clue);
                     CluesManager.Instance.Connections.Add(connecting);
 
+
                     connecting = null;
                     return;
                 }
@@ -131,9 +143,13 @@ public class CluesCanvasManager : MonoBehaviour, IBeginDragHandler, IEndDragHand
     public void BtnModeConnect()
     {
         mode = DragMode.Connecting;
+        connectBtnImage.color = Color.green;
+        dragBtnImage.color = Color.white;
     }
     public void BtnModeDrag()
     {
         mode = DragMode.Dragging;
+        dragBtnImage.color = Color.green;
+        connectBtnImage.color = Color.white;
     }
 }

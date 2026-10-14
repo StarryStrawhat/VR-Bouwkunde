@@ -29,7 +29,7 @@ public class CluesManager : MonoBehaviour
     }
     public Connection NewConnection()
     {
-        GameObject connectionObj = Instantiate(ConnectionPrefab, CluesCanvasManager.Instance.canvas.gameObject.transform);
+        GameObject connectionObj = Instantiate(ConnectionPrefab, CluesCanvasManager.Instance.objectsGroup.gameObject.transform);
         Connection connection = connectionObj.AddComponent<Connection>();
 
         connection.rectTransform = connection.GetComponent<RectTransform>();
@@ -40,7 +40,7 @@ public class CluesManager : MonoBehaviour
     }
     public Clue NewClue(string title, string description)
     {
-        GameObject clueObj = Instantiate(CluePrefab, CluesCanvasManager.Instance.canvas.gameObject.transform);
+        GameObject clueObj = Instantiate(CluePrefab, CluesCanvasManager.Instance.objectsGroup.gameObject.transform);
         Clue clue = clueObj.AddComponent<Clue>();
 
         Transform titleObj = clueObj.transform.Find("tmpTitle");
