@@ -7,24 +7,52 @@ public class Movement: MonoBehaviour
     PlayerInput playerInput;
     InputAction moveAction;
     //Float die de movement speed bepaald.
-    public float moveSpeed;
+    public float moveSpeed = 5f;
+    //Camera die de kijkrichting van de speler bepaald.
+    public Camera playerCamera;
 
-    void Start()
+    private void Start()
     {
         //Zorgt ervoor dat dit script de InputSystem vindt.
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
     }
-    void Update()
+    private void Update()
     {
+        // Roep de bewegingsfunctie elke frame aan zodat de speler constant kan bewegen.
        MovePlayer(); 
+
+     
     }
 
     public void MovePlayer()
     {
             //Zorgt ervoor dat de speler vrij kan bewegen op 2 axes.
         Vector2 direction = moveAction.ReadValue<Vector2>();
-        transform.position += new Vector3(direction.x, 0, direction.y)* moveSpeed * Time.deltaTime;    
+
+        if (playerCamera == null)
+        {
+            // Als er nog geen camera gekoppeld is, gebruik dan de hoofdcamera van de scene.
+            playerCamera = Camera.main;
+            if (playerCamera == null) return;
+        }
+
+        // Haal de voor- en rechtervector van de camera op.
+        // Deze worden gebruikt om de beweging te relateren aan de kijkrichting.
+        Vector3 forward = playerCamera.transform.forward;
+        Vector3 right = playerCamera.transform.right;
+
+        // Zet de Y-component weg, zodat de speler niet verticaal beweegt.
+        forward.y = 0f;
+        right.y = 0f;
+
+        //snelheid blijft consistent
+        forward.Normalize();
+        right.Normalize();
+
+        //berekent uiteindelijke beweging
+        Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed * Time.deltaTime;
+        transform.position += move;
     }
 }
 
