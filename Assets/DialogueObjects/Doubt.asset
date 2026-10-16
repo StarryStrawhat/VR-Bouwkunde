@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53923ae361b705f419714050c088ab69, type: 3}
-  m_Name: Test
+  m_Name: Doubt
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Hallo, ik heb een probleem
-  - Zou jij mij hiermee kunnen helpen?
-  responses:
-  - responseText: Accept
-    dialogueObject: {fileID: 11400000, guid: b1784a055ee52cf4aa9896ca600a0232, type: 2}
-  - responseText: Reject
-    dialogueObject: {fileID: 11400000, guid: e19e7692d3b57144b8353e07d2e962ac, type: 2}
+  - 'Kijk niet op uzelf neer. Ik geloof dat u het kunt, nu moet u daarin ook geloven.
+
+'
+  responses: []
