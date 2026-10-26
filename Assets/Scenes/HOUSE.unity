@@ -626,7 +626,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.744, y: -0.33945, z: -0.13715}
-  m_LocalScale: {x: 0.0067060674, y: -0.022951886, z: 0.26977733}
+  m_LocalScale: {x: 0.0067060674, y: 0.022, z: 0.26977733}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967730503}
@@ -735,18 +735,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0010864473, y: 0.0026041532, z: 0.002475479}
   m_Center: {x: -0.0000007505296, y: 0.0000037529344, z: -0.00017337914}
---- !u!1 &635312694 stripped
+--- !u!1 &631500187 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4645938780495516901, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+  m_CorrespondingSourceObject: {fileID: -8561059023745340916, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
   m_PrefabInstance: {fileID: 2021232633}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &635312699
+--- !u!65 &631500189
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635312694}
+  m_GameObject: {fileID: 631500187}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -759,8 +759,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.90851134, y: 0.42730087, z: 0.47217697}
-  m_Center: {x: 0.45291165, y: -0.23037603, z: -0.2347454}
+  m_Size: {x: 0.9781137, y: 0.9913485, z: 0.5366397}
+  m_Center: {x: -0.010943688, y: 0.004325933, z: 0.056019783}
 --- !u!1 &663923060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7103153012782714218, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
@@ -3423,9 +3423,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 530879612625096888, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 933350961}
-    - targetCorrespondingSourceObject: {fileID: 4645938780495516901, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -8561059023745340916, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 635312699}
+      addedObject: {fileID: 631500189}
     - targetCorrespondingSourceObject: {fileID: 3207877404426142789, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       insertIndex: -1
       addedObject: {fileID: 493957220}
