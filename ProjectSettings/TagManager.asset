@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Xray
   - Visible
+  - Draggable
   layers:
   - Default
   - TransparentFX

@@ -1,6 +1,6 @@
-﻿<Solution>
-  <Project Path="Assembly-CSharp-Editor.csproj" />
-  <Project Path="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
-  <Project Path="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj" />
+<Solution>
+  <Project Path="Assembly-CSharp-Editor.csproj" Id="6d7c7203-b4cb-2490-b925-b3627084b291" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj" Id="b574f8a2-41a9-00bb-7926-66fd87b42844" />
+  <Project Path="Assembly-CSharp.csproj" Id="35022b3f-64ba-9c15-9175-68a6966b0aab" />
+  <Project Path="Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj" Id="d83f41f1-3b56-4946-5ede-5c1edef46d16" />
 </Solution>
