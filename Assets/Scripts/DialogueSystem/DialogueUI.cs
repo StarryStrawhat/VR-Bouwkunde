@@ -12,13 +12,11 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private InputActionReference nextDialogueAction;
 
     [SerializeField] public GameObject dialogueTrigger;
-    // [SerializeField] private DialogueInteract dialogueInteract;
 
 
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
-    private bool isDialogueRunning;
 
 
     // Bij het opstarten zorgt dit ervoor dat hij de script van de typewriter effect en responsehandler ophaalt en maakt de dialogebox leeg
@@ -28,7 +26,6 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogueBox();
-        // dialogueInteract.CloseInteractText();
     }
 
     // stopt alle processen die bezig waren in de canvas bij opstart en start alles wat in de canvas staat
@@ -36,7 +33,6 @@ public class DialogueUI : MonoBehaviour
     {
         StopAllCoroutines();
 
-        isDialogueRunning = (true);
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
@@ -69,6 +65,5 @@ public class DialogueUI : MonoBehaviour
     {
         dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
-        isDialogueRunning = false;
     }
 }
