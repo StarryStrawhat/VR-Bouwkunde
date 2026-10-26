@@ -8,6 +8,7 @@ public class DialogueUI : MonoBehaviour
 {
     //References naar dingen
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject Interactable;
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private InputActionReference nextDialogueAction;
 
@@ -31,8 +32,8 @@ public class DialogueUI : MonoBehaviour
     // stopt alle processen die bezig waren in de canvas bij opstart en start alles wat in de canvas staat
     public void ShowDialogue(DialogueObject dialogueObject)
     {
+        Interactable.SetActive(false);
         StopAllCoroutines();
-
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
     }
