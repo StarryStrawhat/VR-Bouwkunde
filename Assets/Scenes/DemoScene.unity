@@ -4014,7 +4014,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620718509}
   - component: {fileID: 1620718507}
-  - component: {fileID: 1620718506}
+  - component: {fileID: 1620718512}
   - component: {fileID: 1620718505}
   - component: {fileID: 1620718510}
   - component: {fileID: 1620718511}
@@ -4052,8 +4052,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1620718506}
-        m_TargetAssemblyTypeName: Movement, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Movement2, Assembly-CSharp
         m_MethodName: MovePlayer
         m_Mode: 1
         m_Arguments:
@@ -4159,20 +4159,6 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1620718506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1620718504}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14e858b8c6c160b40aa494948feceab4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Movement
-  moveSpeed: 5
-  playerCamera: {fileID: 0}
 --- !u!114 &1620718507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4252,6 +4238,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.11, y: 1.3540922, z: 1}
   m_Center: {x: -0.108642556, y: 0.17704578, z: 0}
+--- !u!114 &1620718512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620718504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457ee4a05f73e49448cfcede5ff52be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement2
+  moveSpeed: 5
+  playerCamera: {fileID: 0}
 --- !u!1 &1682998911
 GameObject:
   m_ObjectHideFlags: 0
