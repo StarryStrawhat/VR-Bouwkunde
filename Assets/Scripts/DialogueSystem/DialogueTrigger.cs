@@ -6,6 +6,8 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private DialogueObject dialogue;
     [SerializeField] private InputActionReference InteractAction;
+    // [SerializeField] private GameObject containerGameObject;
+    // [SerializeField] private DialogueInteract dialogueInteract;
     bool player_detection = false;
 
     // Als de player in het veld van de dialogue zit en E wordt ingedrukt, dan start de dialogue
@@ -14,6 +16,7 @@ public class DialogueTrigger : MonoBehaviour
         if (player_detection && InteractAction.action.WasPressedThisFrame())
         {
             dialogueUI.ShowDialogue(dialogue);
+            // dialogueInteract.CloseInteractText();
         }
     }
 
@@ -23,6 +26,7 @@ public class DialogueTrigger : MonoBehaviour
         if (other.CompareTag("Player")) 
         {
             player_detection = true;
+            // dialogueInteract.ShowInteractText();
         }
     }
 
@@ -33,6 +37,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             player_detection = false;
             dialogueUI.CloseDialogueBox();
+            // dialogueInteract.CloseInteractText();
         }
     }
 }

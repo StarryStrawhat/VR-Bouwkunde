@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using Unity.VisualScripting;
 
-public class DialogueUI: MonoBehaviour
+public class DialogueUI : MonoBehaviour
 {
     //References naar dingen
     [SerializeField] private GameObject dialogueBox;
@@ -12,6 +12,9 @@ public class DialogueUI: MonoBehaviour
     [SerializeField] private InputActionReference nextDialogueAction;
 
     [SerializeField] public GameObject dialogueTrigger;
+    // [SerializeField] private DialogueInteract dialogueInteract;
+
+
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
@@ -25,6 +28,7 @@ public class DialogueUI: MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogueBox();
+        // dialogueInteract.CloseInteractText();
     }
 
     // stopt alle processen die bezig waren in de canvas bij opstart en start alles wat in de canvas staat
@@ -35,7 +39,7 @@ public class DialogueUI: MonoBehaviour
         isDialogueRunning = (true);
         dialogueBox.SetActive(true);
         StartCoroutine(StepThroughDialogue(dialogueObject));
-    }   
+    }
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
