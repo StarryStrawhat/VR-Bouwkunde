@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/DialogueObjects.meta
+guid: c49b424dd68976541ac879b3b8ca3d3e
+========
 guid: 0f15e38485ae7bd4dbd3245b49498eb1
+>>>>>>>> Development:Assets/Character.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
