@@ -22,9 +22,11 @@ public class DialogueTrigger : MonoBehaviour
     //valideert dat de speler in het veld van de dialogue zit
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Checking...");
         if (other.CompareTag("Player")) 
         {
             player_detection = true;
+            Debug.Log("Player detected!!!");
         }
     }
 
