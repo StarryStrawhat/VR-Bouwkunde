@@ -10,12 +10,14 @@ public class Movement2 : MonoBehaviour
     public float moveSpeed = 5f;
     //Camera die de kijkrichting van de speler bepaald.
     public Camera playerCamera;
+    private CharacterController controller;
 
     private void Start()
     {
         //Zorgt ervoor dat dit script de InputSystem vindt.
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
+        controller = GetComponent<CharacterController>();
     }
     private void Update()
     {
@@ -51,8 +53,9 @@ public class Movement2 : MonoBehaviour
         right.Normalize();
 
         //berekent uiteindelijke beweging
-        Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed * Time.deltaTime;
-        transform.position += move;
+        Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed;
+
+        controller.Move(move * Time.deltaTime);
     }
 }
 
