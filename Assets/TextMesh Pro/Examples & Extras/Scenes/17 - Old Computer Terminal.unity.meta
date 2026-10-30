@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro.meta
+guid: f6c35912bfc90f5428c614637a87de28
+folderAsset: yes
+========
 guid: 3e2e4d7b0bed4cf9ab827e9f32448f69
 timeCreated: 1435300594
 licenseType: Store
+>>>>>>>> Development:Assets/TextMesh Pro/Examples & Extras/Scenes/17 - Old Computer Terminal.unity.meta
 DefaultImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
