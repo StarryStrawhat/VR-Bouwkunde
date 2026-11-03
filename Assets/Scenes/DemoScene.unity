@@ -4852,6 +4852,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 65f2fd6e-e1f5-4cd8-874f-d0b58c98cbc4
     m_ActionName: 'UI/NextDialogue[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23956a16-87d7-4e61-8add-f71f1f0f2cba
+    m_ActionName: 'Player/ClueLogToggle[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -4930,7 +4934,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
