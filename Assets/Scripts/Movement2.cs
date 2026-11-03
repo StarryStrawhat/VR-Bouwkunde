@@ -61,11 +61,11 @@ public class Movement2 : MonoBehaviour
         forward.Normalize();
         right.Normalize();
 
-        //berekent uiteindelijke beweging
+        //berekent uiteindelijke beweging   originele versie van beneden, deze jitterde heel erg.
         //Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed * Time.deltaTime;
         //transform.position += move;
 
-        //Versie 2 ^^
+        //Versie 2 van hierboven DEZE WERKT!!! Waarom weten we eigenlijk niet zo goed
         Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed;
 
         controller.Move(move * Time.deltaTime);

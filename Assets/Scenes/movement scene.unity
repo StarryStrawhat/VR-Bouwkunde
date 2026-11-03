@@ -3897,6 +3897,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 65f2fd6e-e1f5-4cd8-874f-d0b58c98cbc4
     m_ActionName: 'UI/NextDialogue[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 23956a16-87d7-4e61-8add-f71f1f0f2cba
+    m_ActionName: 'Player/ClueLogToggle[/Keyboard/f]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: 
@@ -3966,7 +3970,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!65 &1395735373
 BoxCollider:
