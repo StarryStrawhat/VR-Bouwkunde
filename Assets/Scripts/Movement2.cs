@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class Movement2 : MonoBehaviour
 {
     //Called de Input System en de Move Action uit de Input System en zorgt ervoor dat je ze kan referencen in script.
-    PlayerInput playerInput;
-    InputAction moveAction;
+    public PlayerInput playerInput;
+    public InputAction moveAction;
     //Float die de movement speed bepaald.
     public float moveSpeed = 5f;
     //Camera die de kijkrichting van de speler bepaald.
@@ -19,10 +19,13 @@ public class Movement2 : MonoBehaviour
     }
     private void Update()
     {
+    }
+
+    private void FixedUpdate()
+    {
         // Roep de bewegingsfunctie elke frame aan zodat de speler constant kan bewegen.
+        // Staat in FixedUpdate voor geen jittering als je tegen muur loopt.
         MovePlayer();
-
-
     }
 
     public void MovePlayer()
