@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics.HapticsUtility;
 
 public class Movement2 : MonoBehaviour
 {
@@ -11,11 +12,18 @@ public class Movement2 : MonoBehaviour
     //Camera die de kijkrichting van de speler bepaald.
     public Camera playerCamera;
 
+    //Versie 2
+    private CharacterController controller;
+
+
     private void Start()
     {
         //Zorgt ervoor dat dit script de InputSystem vindt.
         playerInput = GetComponent<PlayerInput>();
         moveAction = playerInput.actions.FindAction("Move");
+
+        //Versie 2
+        controller = GetComponent<CharacterController>();
     }
     private void Update()
     {
@@ -54,8 +62,16 @@ public class Movement2 : MonoBehaviour
         right.Normalize();
 
         //berekent uiteindelijke beweging
-        Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed * Time.deltaTime;
-        transform.position += move;
+        //Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed * Time.deltaTime;
+        //transform.position += move;
+
+        //Versie 2 ^^
+        Vector3 move = (forward * direction.y + right * direction.x) * moveSpeed;
+
+        controller.Move(move * Time.deltaTime);
+
+
+
     }
 }
 
