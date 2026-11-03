@@ -28,7 +28,9 @@ public class DialogueTrigger : MonoBehaviour
     //valideert dat de speler in het veld van de dialogue zit
     private void OnTriggerEnter(Collider other)
     {
+        //checkt of er iets collides met de collider en schrijft stukje tekst in de console
         Debug.Log("Checking...");
+        //als de inkomende collider de tag player heeft, gaat player detection aan en returned dit in de console
         if (other.CompareTag("Player")) 
         {
             player_detection = true;
@@ -36,9 +38,10 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    // valideert dat de spelder niet in het veld van de dialogue zit
+    
     private void OnTriggerExit(Collider other)
     {
+        //De dialogue box sluit als de collider met de player tag het veld verlaat
         if (other.CompareTag("Player"))
         {
             hasInteracted = false;
