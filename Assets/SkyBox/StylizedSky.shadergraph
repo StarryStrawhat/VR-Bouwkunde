@@ -4805,7 +4805,7 @@
     "m_ObjectId": "06094179e8fa4e5fa04fceb1b52f2be3",
     "m_Title": "Dot Product used to compare two vectors.",
     "m_Position": {
-        "x": -10973.0009765625,
+        "x": -10973.0,
         "y": -198.0
     }
 }
@@ -5630,7 +5630,7 @@
     "m_ObjectId": "0e2c2619870f40078d9937d4cc97734b",
     "m_Title": "Adjust the Range of a Set of Values",
     "m_Position": {
-        "x": -8835.0009765625,
+        "x": -8835.0,
         "y": -295.0
     }
 }
@@ -5783,7 +5783,7 @@
     "m_ObjectId": "0f0394c9bbc940e4a4f957d7bf367b04",
     "m_Title": "Range",
     "m_Position": {
-        "x": -16071.0029296875,
+        "x": -16071.0,
         "y": 257.0
     }
 }
@@ -6946,8 +6946,8 @@
     "m_ObjectId": "18e321ef20d34f48bbebbe5ad8f58e69",
     "m_Title": "Altitude Blending Mask",
     "m_Position": {
-        "x": -21880.001953125,
-        "y": 417.00030517578127
+        "x": -21880.0,
+        "y": 417.0
     }
 }
 
@@ -7000,8 +7000,8 @@
     "m_ObjectId": "1912ae527f714ac0ac240c2bbfeba770",
     "m_Title": "Under The Hood",
     "m_Position": {
-        "x": -16117.0029296875,
-        "y": -182.00015258789063
+        "x": -16117.0,
+        "y": -182.0
     }
 }
 
@@ -9238,8 +9238,8 @@
     "m_ObjectId": "296a31cf2ca74688bf9958159a529269",
     "m_Title": "Flipbook",
     "m_Position": {
-        "x": -6522.0009765625,
-        "y": 1915.00048828125
+        "x": -6522.0,
+        "y": 1915.0
     }
 }
 
@@ -9809,7 +9809,7 @@
     "m_ObjectId": "2f0012afa59e4c9088b9c85fa3486df1",
     "m_Title": "Adding Smooth Slow-in and Slow Out",
     "m_Position": {
-        "x": -22864.001953125,
+        "x": -22864.0,
         "y": -131.0
     }
 }
@@ -10239,7 +10239,7 @@
     "m_ObjectId": "340ce3f665a34e48a62eebe2cfaf8df4",
     "m_Title": "Dot Product used for desaturation",
     "m_Position": {
-        "x": -12085.001953125,
+        "x": -12085.0,
         "y": -171.0
     }
 }
@@ -11196,7 +11196,7 @@
     "m_ObjectId": "39b6b983b87f4ad29a3a7f812606267b",
     "m_Title": "Adjusting a Value Range",
     "m_Position": {
-        "x": -18605.001953125,
+        "x": -18605.0,
         "y": -59.0
     }
 }
@@ -12054,8 +12054,8 @@
     "m_ObjectId": "3fe8c6de800d4c04a1bea862360c8271",
     "m_Title": "Project a Texture In World Space",
     "m_Position": {
-        "x": -5053.00048828125,
-        "y": 590.000244140625
+        "x": -5053.0,
+        "y": 590.0
     }
 }
 
@@ -13573,8 +13573,8 @@
     "m_ObjectId": "4b0c29628f454dfc93836a58f8334e2b",
     "m_Title": "Animated Rotation",
     "m_Position": {
-        "x": -5957.00048828125,
-        "y": 1393.0003662109375
+        "x": -5957.0,
+        "y": 1393.0
     }
 }
 
@@ -13850,7 +13850,7 @@
     "m_ObjectId": "4c333de8f08147b0aab5ea3f37a03046",
     "m_Title": "Scrolling UVs",
     "m_Position": {
-        "x": -8033.0009765625,
+        "x": -8033.0,
         "y": -297.0
     }
 }
@@ -14020,7 +14020,7 @@
     "m_ObjectId": "4c92c36ab7b3494181554125933be642",
     "m_Title": "Desolve Effect",
     "m_Position": {
-        "x": -22863.00390625,
+        "x": -22863.0,
         "y": 415.0
     }
 }
@@ -14117,8 +14117,8 @@
     "m_ObjectId": "4d94bb9e62364e53ba915fccbb250c2b",
     "m_Title": "The Basics",
     "m_Position": {
-        "x": -3049.00048828125,
-        "y": -194.00015258789063
+        "x": -3049.0,
+        "y": -194.0
     }
 }
 
@@ -15315,8 +15315,8 @@
     "m_ObjectId": "5740be0ceeee4456b5f18b5d49819057",
     "m_Title": "Ripples",
     "m_Position": {
-        "x": -7287.0009765625,
-        "y": 786.000244140625
+        "x": -7287.0,
+        "y": 786.0
     }
 }
 
@@ -15403,7 +15403,7 @@
     "m_ObjectId": "57c59c081b6e43e594af748192e0209e",
     "m_Title": "The Basics",
     "m_Position": {
-        "x": -3703.00048828125,
+        "x": -3703.0,
         "y": -224.0
     }
 }
@@ -15523,7 +15523,7 @@
     "m_ObjectId": "59c7950050ed4b5b9d80702cfe59b3fb",
     "m_Title": "Using a Dot Product to Create a Reflection Vector",
     "m_Position": {
-        "x": -13173.001953125,
+        "x": -13173.0,
         "y": 505.0
     }
 }
@@ -16287,7 +16287,7 @@
     "m_ObjectId": "6143aca7418a46fa959744c58709d0e8",
     "m_Title": "Uses",
     "m_Position": {
-        "x": -15348.0029296875,
+        "x": -15348.0,
         "y": -176.0
     }
 }
@@ -16433,7 +16433,7 @@
     "m_ObjectId": "620d2606a9f74da4a2a045627afdea7e",
     "m_Title": "Controlling the Positioning of the Blend",
     "m_Position": {
-        "x": -22140.001953125,
+        "x": -22140.0,
         "y": -131.0
     }
 }
@@ -17167,8 +17167,8 @@
     "m_ObjectId": "6840e2fe1793481eb30e8801dbd3e82f",
     "m_Title": "Saturation",
     "m_Position": {
-        "x": -14568.0009765625,
-        "y": -175.00015258789063
+        "x": -14568.0,
+        "y": -175.0
     }
 }
 
@@ -17909,8 +17909,8 @@
     "m_ObjectId": "6d4a090aad244f1fafcd85c74cd92b12",
     "m_Title": "Something More Interesting",
     "m_Position": {
-        "x": -6666.00048828125,
-        "y": 240.00030517578126
+        "x": -6666.0,
+        "y": 240.0
     }
 }
 
@@ -19009,7 +19009,7 @@
     "m_ObjectId": "75831fe9d83b400c8efe360e3df7ac3a",
     "m_Title": "Animated UV Scaling",
     "m_Position": {
-        "x": -10050.0009765625,
+        "x": -10050.0,
         "y": -259.0
     }
 }
@@ -19371,8 +19371,8 @@
     "m_ObjectId": "785b41b33e3947539fc37b612907e744",
     "m_Title": "Artificial Internal Light Source",
     "m_Position": {
-        "x": -7266.0009765625,
-        "y": 1394.000244140625
+        "x": -7266.0,
+        "y": 1394.0
     }
 }
 
@@ -19664,7 +19664,7 @@
     "m_ObjectId": "7b7bbd0ff77b47ab8084dcc6fafc8a05",
     "m_Title": "Under The Hood",
     "m_Position": {
-        "x": -20793.001953125,
+        "x": -20793.0,
         "y": -97.0
     }
 }
@@ -22047,7 +22047,7 @@
     "m_ObjectId": "9245e7e924f64d44a50f8c182fbf1f53",
     "m_Title": "Scrolling",
     "m_Position": {
-        "x": -7273.0009765625,
+        "x": -7273.0,
         "y": -241.0
     }
 }
@@ -22568,8 +22568,8 @@
     "m_ObjectId": "979a35b6f92347c1a98f6d8e457a65e6",
     "m_Title": "Using Split and Combine Together",
     "m_Position": {
-        "x": -3802.00048828125,
-        "y": 603.0003051757813
+        "x": -3802.0,
+        "y": 603.0
     }
 }
 
@@ -22917,8 +22917,8 @@
     "m_ObjectId": "99ab2e30bee74d358b578946bd1a9c0c",
     "m_Title": "Character Brightness Gradient",
     "m_Position": {
-        "x": -5419.00048828125,
-        "y": -67.00031280517578
+        "x": -5419.0,
+        "y": -67.0
     }
 }
 
@@ -23152,7 +23152,7 @@
     "m_ObjectId": "9a7f9c96ea664035b55644600396fe29",
     "m_Title": "Divide Is Used To Normalize",
     "m_Position": {
-        "x": -10069.0009765625,
+        "x": -10069.0,
         "y": 266.0
     }
 }
@@ -23700,7 +23700,7 @@
     "m_ObjectId": "9ee310f5f84f4e2daa85be33180e764e",
     "m_Title": "Under The Hood",
     "m_Position": {
-        "x": -13086.0009765625,
+        "x": -13086.0,
         "y": -179.0
     }
 }
@@ -24867,7 +24867,7 @@
     "m_ObjectId": "a6e28cafde27493fb575d811e64ed9db",
     "m_Title": "Animated UV Scaling",
     "m_Position": {
-        "x": -19390.00390625,
+        "x": -19390.0,
         "y": -89.0
     }
 }
@@ -25161,8 +25161,8 @@
     "m_ObjectId": "a947bbf3dca34374b5d41c10dc4b5fe5",
     "m_Title": "Combining Components From Various Sources",
     "m_Position": {
-        "x": -3848.00048828125,
-        "y": 79.000244140625
+        "x": -3848.0,
+        "y": 79.0
     }
 }
 
@@ -27613,8 +27613,8 @@
     "m_ObjectId": "bd279d37296942db8947dde492edd40b",
     "m_Title": "Don't Divide By Zero",
     "m_Position": {
-        "x": -9349.0009765625,
-        "y": -256.0001525878906
+        "x": -9349.0,
+        "y": -256.0
     }
 }
 
@@ -29222,8 +29222,8 @@
     "m_ObjectId": "c7dc3c1a2d6d4ea0bcea35fe4e0cc201",
     "m_Title": "Animated Dissolve Effect",
     "m_Position": {
-        "x": -7287.0009765625,
-        "y": 1915.00048828125
+        "x": -7287.0,
+        "y": 1915.0
     }
 }
 
@@ -30380,7 +30380,7 @@
     "m_ObjectId": "ceba6221205141ce96ede7628cfa4d6c",
     "m_Title": "Time Waves",
     "m_Position": {
-        "x": -6322.0009765625,
+        "x": -6322.0,
         "y": -241.0
     }
 }
@@ -31311,7 +31311,7 @@
     "m_ObjectId": "d63129b419fd492bb303202b59f5bda2",
     "m_Title": "Dot Product used for channel selection",
     "m_Position": {
-        "x": -11530.0009765625,
+        "x": -11530.0,
         "y": -198.0
     }
 }
@@ -34639,8 +34639,8 @@
     "m_ObjectId": "f2d1e5e1de3e41a5bb4848e3b788322c",
     "m_Title": "Limit the Minimum Brightness",
     "m_Position": {
-        "x": -17363.001953125,
-        "y": -163.00015258789063
+        "x": -17363.0,
+        "y": -163.0
     }
 }
 
@@ -35424,8 +35424,8 @@
     "m_ObjectId": "f9ebe1d66df64ed6ae4da2690030ccdd",
     "m_Title": "Bouncing",
     "m_Position": {
-        "x": -7271.0009765625,
-        "y": 240.00030517578126
+        "x": -7271.0,
+        "y": 240.0
     }
 }
 
@@ -36073,7 +36073,7 @@
     "m_ObjectId": "fe0d3589ea76438191a51f646419422e",
     "m_Title": "Time Loops",
     "m_Position": {
-        "x": -6685.00048828125,
+        "x": -6685.0,
         "y": -240.0
     }
 }
