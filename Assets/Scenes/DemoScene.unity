@@ -2961,7 +2961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTrigger
   dialogueUI: {fileID: 1923054783}
   dialogue: {fileID: 11400000, guid: b673a4fa8b9dd1b4aa7997e88ba4fd69, type: 2}
-  InteractAction: {fileID: 1781555164194001046, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  nextDialogueAction: {fileID: 7346441467166181933, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!65 &1202707975
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5753,7 +5753,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Druk E om te praten
+  m_text: Druk spatie om te praten
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

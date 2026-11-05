@@ -16,10 +16,12 @@ public class ResponseHandler : MonoBehaviour
 
     private void Start()
     {
+        //haalt de dialogue ui script op
         dialogueUI = GetComponent<DialogueUI>(); 
     }
     public void ShowResponses(Response[] responses)
     {
+        //geeft de hoogte aan van de responses in het algemeen
         float responseBoxHeight = 0;
 
         foreach (Response response in responses)
@@ -29,9 +31,10 @@ public class ResponseHandler : MonoBehaviour
             responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
             //recalls event callback bij aanklikken van knop
             responseButton.GetComponent<Button>().onClick.AddListener(() => OnPickedResponse(response));
-
+            //voegt de template toe in de response box
             tempResponseButtons.Add(responseButton);
 
+            //veranderd de hoogte van de response box gebaseerd op de template
             responseBoxHeight += responseButtonTemplate.sizeDelta.y;
         }
 
@@ -41,14 +44,17 @@ public class ResponseHandler : MonoBehaviour
 
     private void OnPickedResponse(Response response)
     {
+        //verstopt de responses bij het aanklikken van 1
         responseBox.gameObject.SetActive(false);
 
+        //gooit de responses weg
         foreach (GameObject button in tempResponseButtons)
         {
             Destroy(button);
         }
         tempResponseButtons.Clear();
 
+        //laat de dialogue zien van de gekozen response
         dialogueUI.ShowDialogue(response.DialogueObject);
     }
 }

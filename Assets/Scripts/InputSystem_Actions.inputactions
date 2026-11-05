@@ -1082,6 +1082,17 @@
                     "action": "NextDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "15aa05f9-c82f-4c0a-955e-283e4ea2c0ee",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "NextDialogue",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
