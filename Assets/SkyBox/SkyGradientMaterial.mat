@@ -144,6 +144,6 @@ Material:
     - _HorizonColor: {r: 0.19021001, g: 0.22568892, b: 0.24528301, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunDirection: {r: 2.6, g: -0.13, b: -1.5, a: 0}
-    - _TopColor: {r: 0.3558632, g: 0.48353735, b: 0.5698112, a: 1}
+    - _TopColor: {r: 0.2284443, g: 0.35023272, b: 0.4339623, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
