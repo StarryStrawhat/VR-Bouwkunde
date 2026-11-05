@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts.meta
 guid: 6ab70aee4d56447429c680537fbf93ed
+========
+guid: 89c7da9a19d09c8419df6ac7f38d429e
+>>>>>>>> Development:Assets/Samples/XR Interaction Toolkit/3.3.2/Starter Assets/DemoSceneAssets/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
