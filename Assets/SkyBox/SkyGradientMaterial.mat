@@ -129,7 +129,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
-    - _SunRadiusScale: 0.9
+    - _SunRadiusScale: 0.95
     - _Surface: 0
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
@@ -139,21 +139,21 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _CloudColorBottom: {r: 1, g: 1, b: 1, a: 0}
-    - _CloudColorTop: {r: 0.41037738, g: 0.7167609, b: 1, a: 0}
+    - _CloudColorTop: {r: 0.41037735, g: 0.7167609, b: 1, a: 1}
     - _CloudFade: {r: -0.05, g: 0.41, b: 0, a: 0}
     - _CloudSpeed: {r: 0.05, g: 0.04, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Gradient2Bottom: {r: 0.09433961, g: 0.075204685, b: 0.075204685, a: 0}
-    - _Gradient2Top: {r: 0.0754717, g: 0, b: 0.003692627, a: 0}
+    - _Gradient2Bottom: {r: 0, g: 0, b: 0, a: 0}
+    - _Gradient2Top: {r: 0, g: 0, b: 0, a: 0}
     - _HorizonCOlor: {r: 0.5660378, g: 0.03454629, b: 0, a: 1}
     - _HorizonColor: {r: 0.19021001, g: 0.22568892, b: 0.24528301, a: 1}
-    - _HorizonColor_1: {r: 0.123574354, g: 0, b: 0, a: 1}
-    - _InnerSunColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-    - _RimColor: {r: 0.46226418, g: 0, b: 0, a: 0}
+    - _HorizonColor_1: {r: 0, g: 0, b: 0, a: 1}
+    - _InnerSunColor: {r: 0.103773594, g: 0.072935216, b: 0.072935216, a: 1}
+    - _RimColor: {r: 0.3301887, g: 0.3301887, b: 0.3301887, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunDirection: {r: 2.5, g: -0.07, b: -1.5, a: 0}
-    - _SunRadiusColor: {r: 1.1048056, g: 0.098333485, b: 0, a: 0}
-    - _TopColor: {r: 0.08254717, g: 0.3301887, b: 0.19985102, a: 1}
+    - _SunRadiusColor: {r: 0.5660378, g: 0.50089645, b: 0.49394804, a: 0}
+    - _TopColor: {r: 0, g: 0.3942725, b: 0.4339623, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
