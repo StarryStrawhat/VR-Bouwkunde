@@ -12,7 +12,12 @@ public class ItemManager : MonoBehaviour
     public bool ScrewdriverFound = false;
 
     [Header("Items")]
-    public GameObject DoorKeyTest;
+    public GameObject TempDoorKeyTest;
+    public GameObject DoorKey;
+    public GameObject EmergencyKey;
+    public GameObject Sledgehammer;
+    public GameObject DoorHandle;
+    public GameObject Screwdriver;
 
     void Start()
     {
