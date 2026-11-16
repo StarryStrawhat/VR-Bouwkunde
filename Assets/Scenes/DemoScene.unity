@@ -1771,7 +1771,6 @@ GameObject:
   - component: {fileID: 832506210}
   - component: {fileID: 832506209}
   - component: {fileID: 832506208}
-  - component: {fileID: 832506212}
   m_Layer: 6
   m_Name: DoorKeyTest
   m_TagString: Item
@@ -1872,33 +1871,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &832506212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832506204}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f471c02f05e9dbb44b3aad99a10e8cbc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CustomInteract
-  interactEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1373258754}
-        m_TargetAssemblyTypeName: ItemManager, Assembly-CSharp
-        m_MethodName: FlipXrayAllow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &933350956 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 530879612625096888, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
@@ -2901,6 +2873,120 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.003904357, y: 0.016080745, z: 0.0066116727}
   m_Center: {x: 0.0033995102, y: -0.009767303, z: -0.0016716761}
+--- !u!1 &1247649351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247649355}
+  - component: {fileID: 1247649354}
+  - component: {fileID: 1247649353}
+  - component: {fileID: 1247649352}
+  m_Layer: 0
+  m_Name: BatteryTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!136 &1247649352
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247649351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5000001
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!23 &1247649353
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247649351}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1247649354
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247649351}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1247649355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247649351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.335, y: 1.46788, z: 14.77}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1301555110
 GameObject:
   m_ObjectHideFlags: 0
@@ -3357,7 +3443,7 @@ GameObject:
   - component: {fileID: 1373258754}
   m_Layer: 0
   m_Name: ItemManager
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3378,12 +3464,13 @@ MonoBehaviour:
   DoorKeyFound: 0
   EmergencyKeyFound: 0
   SledgehammerFound: 0
+  BatteryFound: 0
   DoorHandleFound: 0
   ScrewdriverFound: 0
-  TempDoorKeyTest: {fileID: 0}
-  DoorKey: {fileID: 0}
+  DoorKey: {fileID: 832506204}
   EmergencyKey: {fileID: 0}
   Sledgehammer: {fileID: 0}
+  Battery: {fileID: 1247649351}
   DoorHandle: {fileID: 0}
   Screwdriver: {fileID: 0}
 --- !u!4 &1373258755
@@ -4465,7 +4552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DetectMouseClickOnObject
   myCamera: {fileID: 1339181423}
-  length: 100
+  itemManager: {fileID: 1373258754}
 --- !u!1 &1682998911
 GameObject:
   m_ObjectHideFlags: 0
@@ -7331,3 +7418,4 @@ SceneRoots:
   - {fileID: 1202707976}
   - {fileID: 71871701}
   - {fileID: 832506211}
+  - {fileID: 1247649355}

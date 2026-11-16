@@ -8,14 +8,15 @@ public class ItemManager : MonoBehaviour
     public bool DoorKeyFound = false;
     public bool EmergencyKeyFound = false;
     public bool SledgehammerFound = false;
+    public bool BatteryFound = false;
     public bool DoorHandleFound = false;
     public bool ScrewdriverFound = false;
 
     [Header("Items")]
-    public GameObject TempDoorKeyTest;
     public GameObject DoorKey;
     public GameObject EmergencyKey;
     public GameObject Sledgehammer;
+    public GameObject Battery;
     public GameObject DoorHandle;
     public GameObject Screwdriver;
 
@@ -24,6 +25,7 @@ public class ItemManager : MonoBehaviour
         DoorKeyFound = false;
         EmergencyKeyFound = false;
         SledgehammerFound = false;
+        BatteryFound = false;
         DoorHandleFound = false;
         ScrewdriverFound = false;
 
@@ -38,7 +40,15 @@ public class ItemManager : MonoBehaviour
     {
         if (DoorKeyFound == true)
         {
-            xrayManager.XrayAllowed = false;
+            DoorKey.SetActive(false);
+        }
+    }
+
+    public void GrabBattery()
+    {
+        if (BatteryFound == true)
+        {
+            Battery.SetActive(false);
         }
     }
 
