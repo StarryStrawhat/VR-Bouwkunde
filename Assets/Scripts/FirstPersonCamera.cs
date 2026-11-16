@@ -21,7 +21,7 @@ public class FirstPersonCamera : MonoBehaviour
         // Zoek de Camera die als child van dit object staat.
         mainCamera = GetComponentInChildren<Camera>();
 
-        // Vergrendel de cursor en maak hem onzichtbaar   DIT MOET LATER WEER AAN STAAN, MAAR ANDERS KUNNEN WE NIET CLUE SYSTEEM IN DEMOSCENE GEBRUIKEN
+        // Vergrendel de cursor en maak hem onzichtbaar 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
