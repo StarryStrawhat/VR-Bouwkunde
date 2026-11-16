@@ -41,7 +41,6 @@ public class DetectMouseClickOnObject : MonoBehaviour
                     itemManager.GrabBattery();
                 }
 
-
                 if (raycastHit.transform.name == "DoorKeyTest")
                 {
                     itemManager.DoorKeyFound = true;
@@ -49,16 +48,12 @@ public class DetectMouseClickOnObject : MonoBehaviour
                     itemManager.GrabDoorKey();
                 }
 
-                //switch (raycastHit.transform.name == "temp")
+                // Template for future items:
+                //if (raycastHit.transform.name == "ITEM NAME")
                 //{
-                //    case :
-                //        Debug.Log("Key found");
-                //        break;
-
+                //    itemManager.(ITEM NAME)Found = true
+                //    itemManager.Grab(ITEM NAME)();
                 //}
-
-
-
             }
             else
             {

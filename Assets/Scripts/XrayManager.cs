@@ -17,10 +17,8 @@ public class XrayManager : MonoBehaviour
     void Start()
     {
         XrayAllowed = true; //To make sure that the boolean is set right at start of game.
-        //Deze staat hier om de Xray direct te activeren en niet pas wanneer je op spacebar klikt.
-        ActivateXray();
-        //Deze staat hier om ervoor te zorgen dat VisibleMaterial Opaque is bij opstarten.
-        //Als ChangeSurfaceType verwijderd wordt zal dit ook weggaan.
+
+        XrayState = false; //To make sure X-Ray is off at start of game.
     }
     
     //Dit is de functie die de XrayState boolean flipped wanneer input wordt waargenomen.

@@ -56,6 +56,11 @@ public class ItemManager : MonoBehaviour
     {
         Debug.Log("Flipping XrayAllow...");
         xrayManager.XrayAllowed = !xrayManager.XrayAllowed;
+        if (xrayManager.XrayState == true)
+        {
+            xrayManager.XrayState = false;
+            xrayManager.SwapMaterial();
+        }
         Debug.Log("XrayAllow FLIPPED!!!");
     }
 
