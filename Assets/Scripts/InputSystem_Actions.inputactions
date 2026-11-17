@@ -556,6 +556,17 @@
                     "action": "ClickItem",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8874e22-f6cc-4e3d-8de8-733e30c3f807",
+                    "path": "<QuestTouchPlusController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "ClickItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
