@@ -1,15 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using TMPro;
 
 
 public class TypewriterEffect : MonoBehaviour
 {
 //bepaald snelheid van de typewrite effect
     [SerializeField] private float typewriterSpeed = 30f;
-    [SerializeField] private InputActionReference nextDialogueAction;
 
     public Coroutine Run(string textToType, TMP_Text textLabel)
     {
@@ -38,8 +36,6 @@ public class TypewriterEffect : MonoBehaviour
             
             yield return null;
         }
-        
-
         //Concludeert dat alle text is uitgetypt
         textLabel.text = textToType;
     }

@@ -51,7 +51,7 @@ public class DialogueUI : MonoBehaviour
             yield return typewriterEffect.Run(dialogue, textLabel);
             //checkt voor mogelijke responses
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
-            //Wacht totdat de dialogue typewrite effect is afgelopen en vertoont volgende dialogue als spatie wordt ingedrukt
+            //Wacht totdat de dialogue typewrite effect is afgelopen en vertoont volgende dialogue als spat
             yield return new WaitUntil(() => nextDialogueAction.action.WasPressedThisFrame());
         }
 
