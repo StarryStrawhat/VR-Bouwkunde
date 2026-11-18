@@ -8,7 +8,7 @@ public class Connection : MonoBehaviour
     public RectTransform rectTransform;
     public Image image;
 
-
+    // oh right i made this, should probably use that instead of getting connections in the OnDrag in CluesCanvasManager...
     public void UpdateConnections()
     {
         foreach (Connection connection in CluesManager.Instance.Connections)
@@ -35,6 +35,7 @@ public class Connection : MonoBehaviour
         UpdateLinePrivate(from.transform.localPosition, to.transform.localPosition);
     }
 
+    // the actual update line functionality
     private void UpdateLinePrivate(Vector3 from, Vector3 to)
     {
         image.transform.localPosition = from;
