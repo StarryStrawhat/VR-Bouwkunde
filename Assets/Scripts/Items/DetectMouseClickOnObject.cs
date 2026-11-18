@@ -4,26 +4,27 @@ using UnityEngine.InputSystem;
 
 public class DetectMouseClickOnObject : MonoBehaviour
 {
-    public Camera myCamera;
-    public ItemManager itemManager;
-    private float length = 2f;
-    Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0);
+    public Camera myCamera; //The camera from which the ray is cast.
+    public ItemManager itemManager; //ItemManager script, used to reference booleans/functions from there.
+    private float length = 2f; //To extend length of OnDrawGizmo DrawRay
+    Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0); //The point from which the ray is cast inside the camera.
 
     public void ClickItem(InputAction.CallbackContext context)
     {
-       if (!context.started)
-            return;
+       if (!context.started) //Als dit niet de eerste keer is dat je signaal binnenkrijgt dan stopt ie meteen.
+            return;         //Met 1 key input geef je vaak meer dan 1 input signal.
+                            //Om ervoor te zorgen dat je maar 1x de xray toggled stopt die als het niet de eerste input is.
 
         //This ray is using the center point of the camera to be cast, originally this was supposed to use mouse position but that didn't work.
         //When using mouse position the ray would be stock on the bottom left corner of the camera, this was tested using OnDrawGizmos.
-        Ray myRay = myCamera.ScreenPointToRay(center);
+        Ray searchingItem = myCamera.ScreenPointToRay(center);
         
         //Returns information of object hit by ray.
         RaycastHit raycastHit;
 
         //Define boolean to check if you hit something.
         //Boolean returns true if ray has hit something.
-        bool weHitSomething = Physics.Raycast(myRay, out raycastHit);
+        bool weHitSomething = Physics.Raycast(searchingItem, out raycastHit);
 
         //If you hit something with the ray, get it's name.
         if (weHitSomething)
@@ -33,31 +34,32 @@ public class DetectMouseClickOnObject : MonoBehaviour
             if (raycastHit.transform.CompareTag("Item"))
             {
                 Debug.Log("ITEM FOUND ITEM FOUND");
+                //If hit object has Item tag, check for name
+                if (raycastHit.transform.name == "DoorKeyTest")
+                {
+                    itemManager.DoorKeyFound = true; //DoorKeyFound is now true, which allows GrabDoorKey() to activate
+                    itemManager.FlipXrayAllow(); //XrayAllow is flipped off
+                    itemManager.GrabDoorKey(); //DoorKey object is now inactive
+                }
 
                 if (raycastHit.transform.name == "BatteryTest")
                 {
-                    itemManager.BatteryFound = true;
-                    itemManager.FlipXrayAllow();
-                    itemManager.GrabBattery();
-                }
-
-                if (raycastHit.transform.name == "DoorKeyTest")
-                {
-                    itemManager.DoorKeyFound = true;
-                    itemManager.FlipXrayAllow();
-                    itemManager.GrabDoorKey();
+                    //If Battery was hit
+                    itemManager.BatteryFound = true; //BatteryFound is now true, which allows GrabBattery() to activate
+                    itemManager.FlipXrayAllow(); //XrayAllow is flipped back on 
+                    itemManager.GrabBattery(); //Battery object is now inactive
                 }
 
                 // Template for future items:
-                //if (raycastHit.transform.name == "ITEM NAME")
+                //if (raycastHit.transform.name == "[ITEMNAME]")
                 //{
-                //    itemManager.(ITEM NAME)Found = true
-                //    itemManager.Grab(ITEM NAME)();
+                //    itemManager.[ITEMNAME]Found = true //[ITEMNAME]Found is now true, which allows Grab[ITEMNAME]() to activate
+                //    itemManager.Grab[ITEMNAME](); //[ITEMNAME] is now inactive
                 //}
             }
             else
             {
-                Debug.Log("Looking for item....");
+                Debug.Log("Looking for item...."); //Return this if you don't hit an item.
             }
 
         }
@@ -68,13 +70,13 @@ public class DetectMouseClickOnObject : MonoBehaviour
         }
     }
 
-    public void OnDrawGizmos()
+    public void OnDrawGizmos() //This function is purely for visualizing the Ray that's being cast.
     {
-        //Cast a ray through the center point of the screen. This Vector is already defined ^^
+        //Cast a ray through the center point of the screen. This Vector is already defined (Vector3 center)
         //Visualize the ray with a gizmo.
-        Ray testRay = myCamera.ScreenPointToRay(center);
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawRay(testRay.origin, testRay.direction * length);
+        Ray testRay = myCamera.ScreenPointToRay(center); //Shoot a test ray at same point as searchingItem
+        Gizmos.color = Color.yellow; //Set color of Gizmo
+        Gizmos.DrawRay(testRay.origin, testRay.direction * length); //Draw a ray on the same points as testRay
     }
 
 }
