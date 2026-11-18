@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class XrayManager : MonoBehaviour
 {
+    public ItemManager itemManager;
+
     [Header("X-Ray Booleans")] 
     public bool XrayState = false; //Boolean that controls if X-ray is on or off.
     public bool XrayAllowed = true; //Boolean that controls if the Xray is allowed to be used or not.
@@ -14,11 +16,20 @@ public class XrayManager : MonoBehaviour
     public Material XrayMaterial;
     public Material VisibleMaterial;
 
+    [Header("Notifications")]
+    public GameObject notifBackground;
+    public GameObject[] notifMessages;
+
     void Start()
     {
         XrayAllowed = true; //To make sure that the boolean is set right at start of game.
-
         XrayState = false; //To make sure X-Ray is off at start of game.
+
+        notifBackground.SetActive(false); //Make sure notification background is inactive at start
+        foreach (GameObject notifMessage in notifMessages) //Make sure each notification message is inactive at start
+        {
+            notifMessage.SetActive(false); 
+        }
     }
     
     //Dit is de functie die de XrayState boolean flipped wanneer input wordt waargenomen.
@@ -40,8 +51,9 @@ public class XrayManager : MonoBehaviour
         else
         {
             Debug.Log("X-Ray ILLEGAL ILLEGAL ILLAGEL"); //To check if it's indeed turned off.
-            return; //Return nothing because Xray is not allowed.
+            //return; //Return nothing because Xray is not allowed.
         }
+        ShowNotification();
     }
 
     public void ActivateXray()
@@ -74,4 +86,27 @@ public class XrayManager : MonoBehaviour
             }
         }
     }
+
+    public void ShowNotification() //Sets the notification background & messages active
+    {
+        notifBackground.SetActive(true); //Background active
+
+        if (XrayState == true)
+        {
+            notifMessages[0].SetActive(true); //If X-Ray is on, show message
+        }
+        if (XrayState == false)
+        {
+            notifMessages[1].SetActive(true); //If X-Ray is off, show message
+        }
+        if (XrayAllowed == false)
+        {
+            notifMessages[2].SetActive(true); //If X-Ray is disabled, show message
+        }
+        if (itemManager.BatteryFound == true && XrayAllowed == true)
+        {
+            notifMessages[3].SetActive(true); //If X-Ray is enabled, show message THIS ONE NEEDS A CHANGE, NEEDS TO SHOW ONCE AFTER BATTERY PICKUP
+        }
+    }
+
 }
