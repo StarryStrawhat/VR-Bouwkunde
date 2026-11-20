@@ -11,25 +11,25 @@ public class ClueToggle : MonoBehaviour
     bool ToggleClue = false;
     bool Visible = false;
 
+    private void Start()
+    {
+        HideBookSystem();
+    }
+
     private void ShowBookSystem()
     {
-            bookSystem.SetActive(true);
-            Visible = true;
+      bookSystem.SetActive(true);
+      Visible = true;
     }
 
     private void HideBookSystem()
     {
-            bookSystem.SetActive(false);
-            Visible = false;
+        bookSystem.SetActive(false);
+        Visible = false;
     }
 
     void Update()
     {
-        if (ClueLogToggle == null || ClueLogToggle.action == null)
-        {
-            return;
-        }
-
         //checkt of de cluetoggle input knop wordt ingedrukt en of de niet cluetoggle actief is
         if (ClueLogToggle.action.WasPressedThisFrame() && !ToggleClue && !Visible)
         {
