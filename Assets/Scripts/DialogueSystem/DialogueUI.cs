@@ -12,6 +12,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text textLabel;
     [SerializeField] private InputActionReference nextDialogueAction;
     [SerializeField] public GameObject dialogueTrigger;
+    [SerializeField] public GameObject StartText;
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
@@ -24,6 +25,8 @@ public class DialogueUI : MonoBehaviour
         typewriterEffect = GetComponent<TypewriterEffect>();
         //haalt de responses op
         responseHandler = GetComponent<ResponseHandler>();
+        //Wertoont de 'druk op spatie om te starten knop' 
+        StartText.SetActive(true);
 
         //sluit de dialogue canvas
         CloseDialogueBox();
@@ -31,13 +34,14 @@ public class DialogueUI : MonoBehaviour
 
     public void ShowDialogue(DialogueObject dialogueObject)
     {
-        Interactable.SetActive(false);
         //zorgt dat er niet al iets staat in de dialogue en refreshed de dialogue zo wel
         StopAllCoroutines();
         //Vertoont de dialogue canvas
         dialogueBox.SetActive(true);
         //Start de dialogue context
         StartCoroutine(StepThroughDialogue(dialogueObject));
+        //sluit de druk spatie om te starten knop
+        StartText.SetActive(false);
     }
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)

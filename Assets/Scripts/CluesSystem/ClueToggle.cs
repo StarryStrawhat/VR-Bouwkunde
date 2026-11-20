@@ -15,7 +15,7 @@ public class ClueToggle : MonoBehaviour
     //Een Boolean die regelt of de toggle aan of uit staat
     bool ToggleClue = false;
     //boolean of de clue book zichtbaar is of niet
-    bool Visible = false;
+    bool ClueLogVisible = false;
 
     //verstopt de clue book als het spel start
     private void Start()
@@ -27,20 +27,20 @@ public class ClueToggle : MonoBehaviour
     private void ShowBookSystem()
     {
       bookSystem.SetActive(true);
-      Visible = true;
+      ClueLogVisible = true;
     }
 
     //verstopt de clue book
     private void HideBookSystem()
     {
         bookSystem.SetActive(false);
-        Visible = false;
+        ClueLogVisible = false;
     }
 
     void Update()
     {
-        //checkt of de cluetoggle input knop wordt ingedrukt en of de niet cluetoggle actief is
-        if (ClueLogToggle.action.WasPressedThisFrame() && !ToggleClue && !Visible)
+        //checkt of de cluetoggle input knop wordt ingedrukt en of je de clue boekje nog niet open hebt staan.
+        if (ClueLogToggle.action.WasPressedThisFrame() && !ToggleClue && !ClueLogVisible)
         {
             Debug.Log("Toggle triggered");
             //onvergrendeld de muis
@@ -56,7 +56,7 @@ public class ClueToggle : MonoBehaviour
             ClueCamera.FreezeCam();
         }
         //checkt of de cluetoggle input wordt ingedrukt en of die actief is
-        else if (ClueLogToggle.action.WasPressedThisFrame() && ToggleClue && Visible)
+        else if (ClueLogToggle.action.WasPressedThisFrame() && ToggleClue && ClueLogVisible)
         {
             Debug.Log("Toggle triggered");
             //vergrendeld de muis
