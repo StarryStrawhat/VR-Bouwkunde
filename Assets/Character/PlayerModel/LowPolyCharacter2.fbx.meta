@@ -83,8 +83,66 @@ ModelImporter:
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-    human: []
-    skeleton: []
+    human:
+    - boneName: Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: LowPolyCharacter2(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Arms
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: -8.4703295e-22}
+      rotation: {x: -4.900196e-16, y: 0.00000004644096, z: -0.34564868, w: 0.93836397}
+      scale: {x: 0.05252012, y: 0.05252012, z: 0.052520115}
+    - name: Face
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Feet
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hair
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hands
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: -0.00000011920929, z: -0.0000000018626451}
+      rotation: {x: -2.0380729e-15, y: 0.00000004842026, z: -0.36038014, w: 0.93280554}
+      scale: {x: -0.06110315, y: -0.06110315, z: -0.06110315}
+    - name: Hips
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Legs
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0.000000007450581, y: 0.000000059604645, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.07456999, y: 0.31906655, z: 0.07456999}
+    - name: Neck
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: -0.0218446, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Torso
+      parentName: LowPolyCharacter2(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
