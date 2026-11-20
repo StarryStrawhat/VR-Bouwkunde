@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CluesManager : MonoBehaviour
 {
+    // holding and making clues + connections
 
     [SerializeField] private GameObject CluePrefab;
     [SerializeField] private GameObject ConnectionPrefab;
@@ -29,7 +30,9 @@ public class CluesManager : MonoBehaviour
     }
     public Connection NewConnection()
     {
-        GameObject connectionObj = Instantiate(ConnectionPrefab, CluesCanvasManager.Instance.objectsGroup.gameObject.transform);
+        // creating a connection from a prefab
+
+        GameObject connectionObj = Instantiate(ConnectionPrefab, CluesCanvasManager.Instance.objectsGroup.transform);
         Connection connection = connectionObj.AddComponent<Connection>();
 
         connection.rectTransform = connection.GetComponent<RectTransform>();
@@ -40,7 +43,8 @@ public class CluesManager : MonoBehaviour
     }
     public Clue NewClue(string title, string description)
     {
-        GameObject clueObj = Instantiate(CluePrefab, CluesCanvasManager.Instance.objectsGroup.gameObject.transform);
+        // creating a new clue from a prefab using a title and description (mostly used for temp testing)
+        GameObject clueObj = Instantiate(CluePrefab, CluesCanvasManager.Instance.objectsGroup.transform);
         Clue clue = clueObj.AddComponent<Clue>();
 
         Transform titleObj = clueObj.transform.Find("tmpTitle");
@@ -61,10 +65,12 @@ public class CluesManager : MonoBehaviour
         return clue;
     }
 
+    // can probably go since it's not used anywhere as far as i know.
     public void ConnectClues(Clue clue1, Clue clue2)
     {
         Instance.Connections.Add(new() { clue1 = clue1, clue2 = clue2 });
     }
+
 
     public List<Connection> GetConnections(int clueID)
     {
