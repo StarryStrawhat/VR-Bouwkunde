@@ -6,6 +6,7 @@ public class DetectMouseClickOnObject : MonoBehaviour
 {
     public Camera myCamera; //The camera from which the ray is cast.
     public ItemManager itemManager; //ItemManager script, used to reference booleans/functions from there.
+    public XrayManager xrayManager; //XrayManager script, used to reference notifications.
     private float length = 2f; //To extend length of OnDrawGizmo DrawRay
     Vector3 center = new Vector3 (Screen.width / 2, Screen.height / 2, 0); //The point from which the ray is cast inside the camera.
 
@@ -40,14 +41,18 @@ public class DetectMouseClickOnObject : MonoBehaviour
                     itemManager.DoorKeyFound = true; //DoorKeyFound is now true, which allows GrabDoorKey() to activate
                     itemManager.FlipXrayAllow(); //XrayAllow is flipped off
                     itemManager.GrabDoorKey(); //DoorKey object is now inactive
+                    xrayManager.ShowNotification(); //Show message "Battery empty" & Delete messages "X-Ray on/off"
                 }
 
-                if (raycastHit.transform.name == "BatteryTest")
+                if (raycastHit.transform.name == "BatteryTest" && itemManager.DoorKeyFound == true)
                 {
-                    //If Battery was hit
+                    //If Battery was hit & Door Key has been found
                     itemManager.BatteryFound = true; //BatteryFound is now true, which allows GrabBattery() to activate
                     itemManager.FlipXrayAllow(); //XrayAllow is flipped back on 
                     itemManager.GrabBattery(); //Battery object is now inactive
+                    xrayManager.notifMessages[2].SetActive(false); //Delete message "Battery Empty..."
+                    xrayManager.notifMessages[3].SetActive(true); //Show message "Battery Recharged!"
+
                 }
 
                 // Template for future items:
