@@ -548,6 +548,17 @@
                 },
                 {
                     "name": "",
+                    "id": "542738d2-497b-4d0d-910e-16ac9adf1907",
+                    "path": "<QuestTouchPlusController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "ClueLogToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bf36b56a-2ea7-49e0-8a7f-6ec7667595bd",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
