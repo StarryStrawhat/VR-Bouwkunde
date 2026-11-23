@@ -8,10 +8,11 @@ public class Movement2 : MonoBehaviour
     public PlayerInput playerInput;
     public InputAction moveAction;
     //Float die de movement speed bepaald.
-    public float moveSpeed = 5f;
+    public float moveSpeed;
     //Camera die de kijkrichting van de speler bepaald.
     public Camera playerCamera;
 
+    public float moveValue;
     //Versie 2
     private CharacterController controller;
 
@@ -72,6 +73,18 @@ public class Movement2 : MonoBehaviour
 
 
 
+    }
+
+    //Zorgt dat de movement op freeze gaat
+    public void Freeze()
+    {
+        moveSpeed -= moveValue;
+    }
+
+    //Zorgt dat de movement unfreezed en naar de normale sensitivity gaat.
+    public void Unfreeze()
+    {
+        moveSpeed += moveValue;
     }
 }
 
