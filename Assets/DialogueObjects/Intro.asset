@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Intro
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - Fijn dat u kon komen. Ik ben Leonardo.
+  - Fijn dat je kon komen. Ik ben Leonardo.
   - Wij lopen al dagen vast met dit onderzoek.
-  - Ons doel is om uit te zoeken wat verantwoordelijkheden zijn voor de aangerichte
-    schaden. Helaas is elke aanwijzing doodgelopen.
-  - Nu dat u hier bent, vertrouw ik erop dat u snel een verklaring zal concluderen.
-    Ik hoorde van mijn collegas uit de ARPD dat u erg capabel bent op dit vakgebied.
-    Wij rekenen op u.
+  - Ons doel is om uit te zoeken wat redenen zijn voor de aangerichte schade. Helaas
+    is elke aanwijzing doodgelopen.
+  - Nu dat jij hier bent, vertrouw ik erop dat jij snel op oorzaken hierachter komt.
+    Ik hoorde van mijn collegas uit de ARPD dat jij erg capabel bent op dit vakgebied.
+    Wij rekenen op jou.
   responses:
-  - responseText: Ik zal u niet teleurstellen
+  - responseText: Ik zal je niet teleurstellen
     dialogueObject: {fileID: 11400000, guid: b1784a055ee52cf4aa9896ca600a0232, type: 2}
-  - responseText: Verwacht niet te veel
+  - responseText: Verwacht niet teveel
     dialogueObject: {fileID: 11400000, guid: e19e7692d3b57144b8353e07d2e962ac, type: 2}
