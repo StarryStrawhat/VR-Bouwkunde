@@ -36,7 +36,7 @@ public class TypewriterEffect : MonoBehaviour
             
             yield return null;
         }
-
+        //Concludeert dat alle text is uitgetypt
         textLabel.text = textToType;
     }
 }
