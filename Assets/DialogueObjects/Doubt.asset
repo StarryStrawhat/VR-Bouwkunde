@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Doubt
   m_EditorClassIdentifier: Assembly-CSharp::DialogueObject
   dialogue:
-  - 'Kijk niet op uzelf neer. Ik geloof dat u het kunt, nu moet u daarin ook geloven.
+  - 'Kijk niet op jezelf neer. Ik geloof dat jij het kunt, nu moet jij daar ook in
+    geloven.
 
 '
   responses: []
