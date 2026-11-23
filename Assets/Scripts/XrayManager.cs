@@ -1,6 +1,9 @@
+using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class XrayManager : MonoBehaviour
 {
@@ -16,6 +19,7 @@ public class XrayManager : MonoBehaviour
 
     [Header("Notifications")]
     public GameObject notifBackground;
+    public Color notifBackgroundC;
     public GameObject[] notifMessages;
 
     [Header("Battery Check")]
@@ -28,13 +32,34 @@ public class XrayManager : MonoBehaviour
         XrayState = false; //To make sure X-Ray is off at start of game.
         rechargedMessageSent = false; //Making sure this is false at start of game.
 
-        notifBackground.SetActive(false); //Make sure notification background is inactive at start
+        //notifBackground.SetActive(false); //Make sure notification background is inactive at start
+        notifBackgroundC.a = 0;
+        notifBackground.GetComponent<Image>().color = notifBackgroundC; //Make sure background of notification is right at start
+
         foreach (GameObject notifMessage in notifMessages) //Make sure each notification message is inactive at start
         {
             notifMessage.SetActive(false); 
+
         }
     }
-    
+
+    private void Update()
+    {
+        notifBackground.GetComponent<Image>().color = notifBackgroundC;
+    }
+
+    IEnumerator FadeNotification()
+    {
+        for (notifBackgroundC.a = 1f; notifBackgroundC.a >= 0; notifBackgroundC.a -= 0.1f)
+        {
+            Debug.Log("Decreasing Alpha...");
+            Debug.Log(notifBackgroundC.a);
+            yield return new WaitForSeconds(0.5f);
+        }
+        
+    }
+
+
     //Dit is de functie die de XrayState boolean flipped wanneer input wordt waargenomen.
     public void OnXrayToggle(InputAction.CallbackContext context)
     {
@@ -60,6 +85,8 @@ public class XrayManager : MonoBehaviour
             notifMessages[2].SetActive(true);
         }
         ShowNotification();
+        StartCoroutine(FadeNotification());
+
     }
 
     public void ActivateXray()
@@ -95,7 +122,9 @@ public class XrayManager : MonoBehaviour
 
     public void ShowNotification() //Sets the notification background & messages active
     {
-        notifBackground.SetActive(true); //Background active
+        //notifBackground.SetActive(true); //Background active
+        notifBackgroundC.a = 255; //Background is visible
+        Debug.Log(notifBackgroundC.a);
 
         if (XrayState == true)
         {
