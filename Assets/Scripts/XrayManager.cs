@@ -19,8 +19,9 @@ public class XrayManager : MonoBehaviour
 
     [Header("Notifications")]
     public GameObject notifBackground;
-    public Color notifBackgroundC;
+    public Color notifBackgroundColor;
     public GameObject[] notifMessages;
+    public Color notifMessagesColor;
 
     [Header("Battery Check")]
     public ItemManager itemManager;
@@ -31,62 +32,99 @@ public class XrayManager : MonoBehaviour
         XrayAllowed = true; //To make sure that the boolean is set right at start of game.
         XrayState = false; //To make sure X-Ray is off at start of game.
         rechargedMessageSent = false; //Making sure this is false at start of game.
-
-        //notifBackground.SetActive(false); //Make sure notification background is inactive at start
-        notifBackgroundC.a = 0;
-        notifBackground.GetComponent<Image>().color = notifBackgroundC; //Make sure background of notification is right at start
-
-        foreach (GameObject notifMessage in notifMessages) //Make sure each notification message is inactive at start
+        notifBackgroundColor.a = 0; //Setting alpha to 0 so background is invisible.
+        notifBackground.GetComponent<Image>().color = notifBackgroundColor; //Make sure background of notification is right at start.
+        notifMessagesColor.a = 0; //Setting alpha to 0 so messages are invisible.     
+        foreach (GameObject notifMessage in notifMessages) 
         {
-            notifMessage.SetActive(false); 
-
+            notifMessage.GetComponent<Text>().color = Color.black; //Make sure each notification message is invisible at start.
         }
     }
 
     private void Update()
     {
-        notifBackground.GetComponent<Image>().color = notifBackgroundC;
-    }
+        notifBackground.GetComponent<Image>().color = notifBackgroundColor; //Constantly set the color of the background image to notifBackgroundColor so the alpha is updated.
 
-    IEnumerator FadeNotification()
-    {
-        for (notifBackgroundC.a = 1f; notifBackgroundC.a >= 0; notifBackgroundC.a -= 0.1f)
+        if (XrayState == true)
         {
-            Debug.Log("Decreasing Alpha...");
-            Debug.Log(notifBackgroundC.a);
-            yield return new WaitForSeconds(0.5f);
+            notifMessages[0].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated 
         }
-        
+        if (XrayState == false)
+        {
+            notifMessages[1].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is off, constantly set text color to notifBackgroundText so alpha is updated
+        }
+        if (XrayAllowed == false)
+        {
+            notifMessages[2].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is not allowed, constantly set text color to notifBackgroundText so alpha is updated
+        }
+        if (itemManager.BatteryFound == true)
+        {
+            notifMessages[0].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated
+        }
+
+        foreach (GameObject notifMessage in notifMessages)
+        {
+            notifMessage.GetComponent<Text>().color = notifMessagesColor; //Constantly set color of text to notifMessagesColor so alpha is updated.
+        }
     }
 
-
-    //Dit is de functie die de XrayState boolean flipped wanneer input wordt waargenomen.
+    //This is the function that flips the XrayState boolean when an input is detected.
     public void OnXrayToggle(InputAction.CallbackContext context)
     {
         if (XrayAllowed == true) //Checks if the Xray is allowed to be use, this is true before finding Door Key & after finding Battery.
         {
-            //Als dit niet de eerste keer is dat je signaal binnenkrijgt dan stopt ie meteen.
-            //Met 1 key input geef je vaak meer dan 1 input signal. 
-            //Om ervoor te zorgen dat je maar 1x de xray toggled stopt die als het niet de eerste input is.
+            //If this isn't the first time you get a signal, stop immidiately. With 1 key input you send more than 1 signal.
+            //To make sure you toggle the xray once, it stops if it's not the first signal from the input.
             if (!context.started)
                 return;
-            //Dit flipped de boolean.
-            XrayState = !XrayState;
-
             
-            
+            XrayState = !XrayState; //Flips the boolean
 
-            //Toggled de xray aan/uit.
-            ActivateXray();
+            ActivateXray(); //Toggles the xray on/off
         }
-        else
+        else //If xray isn't allowed:
         {
-            Debug.Log("X-Ray ILLEGAL ILLEGAL ILLAGEL"); //To check if it's indeed turned off.
-            notifMessages[2].SetActive(true);
+            notifMessages[2].SetActive(true); //Set message of empty batteries active.
         }
-        ShowNotification();
-        StartCoroutine(FadeNotification());
+        ShowNotification(); //Shows the right notification depending on XrayAllow & XrayState.
 
+        StartCoroutine(FadeMessages()); //Start to fade out notification text
+        StartCoroutine(FadeNotificationBackground()); //Start to fade out notification background
+
+
+    }
+
+    IEnumerator FadeNotificationBackground() //Called in a coroutine so it happens alongside everything else.
+    {
+        for (notifBackgroundColor.a = 1f; notifBackgroundColor.a >= 0; notifBackgroundColor.a -= 0.01f) //If the alpha is 1f, it will decrease by 0.1f until it hits 0.
+        {
+            if (notifBackgroundColor.a > 0.99f) //If alpha is greater than 0.98, wait longer before looping, this is to make sure the notification stays for a few seconds.
+            {
+                Debug.Log("Background" + notifBackgroundColor.a); //Checking current value.
+                yield return new WaitForSecondsRealtime(3f); //Wait 3 seconds before looping
+            }
+            else
+            {
+                Debug.Log(notifBackgroundColor.a); //Checking current value.
+                yield return new WaitForSecondsRealtime(0.1f); //Wait 0.5 seconds before looping.
+            }
+                
+        }
+    }
+
+    IEnumerator FadeMessages()
+    {
+        for (notifMessagesColor.a = 1f; notifMessagesColor.a >= 0; notifMessagesColor.a -= 0.01f)
+        {
+            if (notifMessagesColor.a > 0.99f)
+            {
+                yield return new WaitForSecondsRealtime(3f);
+            }
+            else
+            {
+                yield return new WaitForSecondsRealtime(0.1f);
+            }
+        }
     }
 
     public void ActivateXray()
@@ -123,31 +161,32 @@ public class XrayManager : MonoBehaviour
     public void ShowNotification() //Sets the notification background & messages active
     {
         //notifBackground.SetActive(true); //Background active
-        notifBackgroundC.a = 255; //Background is visible
-        Debug.Log(notifBackgroundC.a);
+        notifBackgroundColor.a = 255; //Background is visible
+        notifMessagesColor.a = 255;
+        Debug.Log(notifBackgroundColor.a);
 
-        if (XrayState == true)
-        {
-            notifMessages[1].SetActive(false); //If X-Ray is on, remove message
-            notifMessages[0].SetActive(true); //If X-Ray is on, show message
-            notifMessages[3].SetActive(false); //If X-Ray is off, remove message
-        }
-        if (XrayState == false)
-        {
-            notifMessages[0].SetActive(false); //If X-Ray is off, remove message
-            notifMessages[1].SetActive(true); //If X-Ray is off, show message
-        }
-        if (XrayAllowed == false)
-        {
-            notifMessages[2].SetActive(true); //If X-Ray is disabled, show message "Battery empty"
-            Debug.Log("JUST CHECKING SMTH DONT MIND ME");
-            notifMessages[0].SetActive(false); //If X-Ray is disabled, remove message "X-Ray On"
-            notifMessages[1].SetActive(false); //If X-Ray is disabled, remove message "X-Ray Off"
-        }
-        if (itemManager.BatteryFound == true)
-        {
-            notifMessages[3].SetActive(false); //If Battery was found, remove message on input.
-        }
+        //if (XrayState == true)
+        //{
+        //    notifMessages[1].SetActive(false); //If X-Ray is on, remove message
+        //    notifMessages[0].SetActive(true); //If X-Ray is on, show message
+        //    notifMessages[3].SetActive(false); //If X-Ray is off, remove message
+        //}
+        //if (XrayState == false)
+        //{
+        //    notifMessages[0].SetActive(false); //If X-Ray is off, remove message
+        //    notifMessages[1].SetActive(true); //If X-Ray is off, show message
+        //}
+        //if (XrayAllowed == false)
+        //{
+        //    notifMessages[2].SetActive(true); //If X-Ray is disabled, show message "Battery empty"
+        //    Debug.Log("JUST CHECKING SMTH DONT MIND ME");
+        //    notifMessages[0].SetActive(false); //If X-Ray is disabled, remove message "X-Ray On"
+        //    notifMessages[1].SetActive(false); //If X-Ray is disabled, remove message "X-Ray Off"
+        //}
+        //if (itemManager.BatteryFound == true)
+        //{
+        //    notifMessages[3].SetActive(false); //If Battery was found, remove message on input.
+        //}
     }
 
 }
