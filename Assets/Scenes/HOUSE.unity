@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0, g: 0.03137255, b: 0.37647063, a: 1}
+  m_FogColor: {r: 0.0072052456, g: 0, b: 0.56200004, a: 1}
   m_FogMode: 2
-  m_FogDensity: 0.102
+  m_FogDensity: 0.126
   m_LinearFogStart: 7.6
   m_LinearFogEnd: 197.92
   m_AmbientSkyColor: {r: 0, g: 0.0033465356, b: 0.19120172, a: 1}
@@ -10328,7 +10328,7 @@ Transform:
   m_GameObject: {fileID: 249949162}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15698496, y: -0.53450274, z: -0.04771205, w: 0.82908756}
-  m_LocalPosition: {x: 6.8843822, y: 6.95, z: -24.036499}
+  m_LocalPosition: {x: 6.8843822, y: 13.43, z: -24.036499}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43763,7 +43763,7 @@ Transform:
   m_GameObject: {fileID: 1633237647}
   serializedVersion: 2
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: -10.504, y: 1.8071, z: -3.1411}
+  m_LocalPosition: {x: -10.504, y: 1.8071, z: -3.264}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43809,9 +43809,9 @@ Light:
   serializedVersion: 12
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.9
   m_Range: 10
-  m_SpotAngle: 108.95819
+  m_SpotAngle: 118.28978
   m_InnerSpotAngle: 16.73618
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -43938,7 +43938,7 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
-  m_SpotAngle: 53.968563
+  m_SpotAngle: 126.2702
   m_InnerSpotAngle: 16.73618
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
@@ -43948,7 +43948,7 @@ Light:
     m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 0.48620325
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -50625,7 +50625,7 @@ PrefabInstance:
     - target: {fileID: -3070727047501579735, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c0ec6a6b4eed85b42a90ecc0540ff175, type: 2}
+      objectReference: {fileID: 2100000, guid: 3fd1fe3bc406adb429d99763404cffaa, type: 2}
     - target: {fileID: -3028848978162733266, guid: ad56dcf32f3e6ee43bd813f23ab72c43, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -51907,8 +51907,8 @@ Light:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 11.32
   m_Range: 10
-  m_SpotAngle: 137.1538
-  m_InnerSpotAngle: 26.225094
+  m_SpotAngle: 106.62586
+  m_InnerSpotAngle: 64.82898
   m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
     m_Type: 2

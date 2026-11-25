@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 65456.22
   tint:
     m_OverrideState: 1
-    m_Value: {r: 1, g: 0.6933962, b: 0.6933962, a: 1}
+    m_Value: {r: 0.7075472, g: 0.5773852, b: 0.5773852, a: 1}
   highQualityFiltering:
     m_OverrideState: 1
     m_Value: 1
