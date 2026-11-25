@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using TMPro;
+using TMPro.Examples;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,9 +21,10 @@ public class XrayManager : MonoBehaviour
 
     [Header("Notifications")]
     public GameObject notifBackground;
-    public Color notifBackgroundColor;
-    public GameObject[] notifMessages;
-    public Color notifMessagesColor;
+    public Color32 notifBackgroundColor;
+    public TextMeshProUGUI[] notifMessages;
+    public Color32 notifMessagesColor;
+    public Color32 notifMessagesInvis;
 
     [Header("Battery Check")]
     public ItemManager itemManager;
@@ -34,10 +37,11 @@ public class XrayManager : MonoBehaviour
         rechargedMessageSent = false; //Making sure this is false at start of game.
         notifBackgroundColor.a = 0; //Setting alpha to 0 so background is invisible.
         notifBackground.GetComponent<Image>().color = notifBackgroundColor; //Make sure background of notification is right at start.
-        notifMessagesColor.a = 0; //Setting alpha to 0 so messages are invisible.     
-        foreach (GameObject notifMessage in notifMessages) 
+        notifMessagesColor.a = 0; //Setting alpha to 0 so messages are invisible.
+
+        foreach (TextMeshProUGUI notifMessage in notifMessages)
         {
-            notifMessage.GetComponent<Text>().color = Color.black; //Make sure each notification message is invisible at start.
+            notifMessage.color = notifMessagesColor; //Make sure each notification message is invisible at start.
         }
     }
 
@@ -47,25 +51,34 @@ public class XrayManager : MonoBehaviour
 
         if (XrayState == true)
         {
-            notifMessages[0].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated 
+            notifMessages[1].color = notifMessagesInvis;
+            notifMessages[0].color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated 
         }
         if (XrayState == false)
         {
-            notifMessages[1].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is off, constantly set text color to notifBackgroundText so alpha is updated
+            notifMessages[0].color = notifMessagesInvis;
+            notifMessages[1].color = notifMessagesColor; //If X-Ray is off, constantly set text color to notifBackgroundText so alpha is updated
         }
         if (XrayAllowed == false)
         {
-            notifMessages[2].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is not allowed, constantly set text color to notifBackgroundText so alpha is updated
+            notifMessages[2].color = notifMessagesColor; //If X-Ray is not allowed, constantly set text color to notifBackgroundText so alpha is updated
         }
         if (itemManager.BatteryFound == true)
         {
-            notifMessages[0].GetComponent<Text>().color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated
+            notifMessages[0].color = notifMessagesColor; //If X-Ray is on, constantly set text color to notifBackgroundText so alpha is updated
         }
 
-        foreach (GameObject notifMessage in notifMessages)
+        if (notifBackgroundColor.a <= 0)
         {
-            notifMessage.GetComponent<Text>().color = notifMessagesColor; //Constantly set color of text to notifMessagesColor so alpha is updated.
+            StopCoroutine(FadeNotificationBackground());
+            Debug.Log("Stopped fade Background");
         }
+        if (notifMessagesColor.a <= 0)
+        {
+            StopCoroutine(FadeMessages());
+            Debug.Log("Stopped fade Text");
+        }
+
     }
 
     //This is the function that flips the XrayState boolean when an input is detected.
@@ -84,7 +97,7 @@ public class XrayManager : MonoBehaviour
         }
         else //If xray isn't allowed:
         {
-            notifMessages[2].SetActive(true); //Set message of empty batteries active.
+            notifMessages[2].GetComponent<Text>().color = notifMessagesColor; //Set message of empty batteries active.
         }
         ShowNotification(); //Shows the right notification depending on XrayAllow & XrayState.
 
@@ -96,16 +109,16 @@ public class XrayManager : MonoBehaviour
 
     IEnumerator FadeNotificationBackground() //Called in a coroutine so it happens alongside everything else.
     {
-        for (notifBackgroundColor.a = 1f; notifBackgroundColor.a >= 0; notifBackgroundColor.a -= 0.01f) //If the alpha is 1f, it will decrease by 0.1f until it hits 0.
+        for (notifBackgroundColor.a = 255; notifBackgroundColor.a >= 0; notifBackgroundColor.a -= 5) //If the alpha is 1f, it will decrease by 0.1f until it hits 0.
         {
-            if (notifBackgroundColor.a > 0.99f) //If alpha is greater than 0.98, wait longer before looping, this is to make sure the notification stays for a few seconds.
+            if (notifBackgroundColor.a > 250) //If alpha is greater than 0.98, wait longer before looping, this is to make sure the notification stays for a few seconds.
             {
-                Debug.Log("Background" + notifBackgroundColor.a); //Checking current value.
+                Debug.Log("Background:" + notifBackgroundColor.a); //Checking current value.
                 yield return new WaitForSecondsRealtime(3f); //Wait 3 seconds before looping
             }
             else
             {
-                Debug.Log(notifBackgroundColor.a); //Checking current value.
+                Debug.Log("Background:" + notifBackgroundColor.a); //Checking current value.
                 yield return new WaitForSecondsRealtime(0.1f); //Wait 0.5 seconds before looping.
             }
                 
@@ -114,14 +127,16 @@ public class XrayManager : MonoBehaviour
 
     IEnumerator FadeMessages()
     {
-        for (notifMessagesColor.a = 1f; notifMessagesColor.a >= 0; notifMessagesColor.a -= 0.01f)
+        for (notifMessagesColor.a = 255; notifMessagesColor.a >= 0; notifMessagesColor.a -= 5)
         {
-            if (notifMessagesColor.a > 0.99f)
+            if (notifMessagesColor.a > 250)
             {
+                Debug.Log("Messages:" + notifBackgroundColor.a); //Checking current value.
                 yield return new WaitForSecondsRealtime(3f);
             }
             else
             {
+                Debug.Log("Messages:" + notifBackgroundColor.a); //Checking current value.
                 yield return new WaitForSecondsRealtime(0.1f);
             }
         }
@@ -163,7 +178,8 @@ public class XrayManager : MonoBehaviour
         //notifBackground.SetActive(true); //Background active
         notifBackgroundColor.a = 255; //Background is visible
         notifMessagesColor.a = 255;
-        Debug.Log(notifBackgroundColor.a);
+        Debug.Log("Background filled" + notifBackgroundColor.a);
+        Debug.Log("Messages filled" + notifMessagesColor.a);
 
         //if (XrayState == true)
         //{

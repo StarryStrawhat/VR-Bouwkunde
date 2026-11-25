@@ -6225,7 +6225,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -7620,13 +7620,20 @@ MonoBehaviour:
   XrayMaterial: {fileID: 2100000, guid: b71a43dcce65ba846b5cd7fdfaa5e775, type: 2}
   VisibleMaterial: {fileID: 2100000, guid: 401de8887d7cd94469b1811f71e623ed, type: 2}
   notifBackground: {fileID: 2001457434}
-  notifBackgroundColor: {r: 0.09411765, g: 0.4117647, b: 0.627451, a: 1}
+  notifBackgroundColor:
+    serializedVersion: 2
+    rgba: 4288702744
   notifMessages:
-  - {fileID: 1936079881}
-  - {fileID: 1132931800}
-  - {fileID: 1313508359}
-  - {fileID: 1194881573}
-  notifMessagesColor: {r: 1, g: 1, b: 1, a: 1}
+  - {fileID: 1936079883}
+  - {fileID: 1132931802}
+  - {fileID: 1313508361}
+  - {fileID: 1194881575}
+  notifMessagesColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  notifMessagesInvis:
+    serializedVersion: 2
+    rgba: 16777215
   itemManager: {fileID: 1373258754}
   rechargedMessageSent: 0
 --- !u!4 &2034107741

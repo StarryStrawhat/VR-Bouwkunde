@@ -50,8 +50,8 @@ public class DetectMouseClickOnObject : MonoBehaviour
                     itemManager.BatteryFound = true; //BatteryFound is now true, which allows GrabBattery() to activate
                     itemManager.FlipXrayAllow(); //XrayAllow is flipped back on 
                     itemManager.GrabBattery(); //Battery object is now inactive
-                    xrayManager.notifMessages[2].SetActive(false); //Delete message "Battery Empty..."
-                    xrayManager.notifMessages[3].SetActive(true); //Show message "Battery Recharged!"
+                    //xrayManager.notifMessages[2].SetActive(false); //Delete message "Battery Empty..."
+                    //xrayManager.notifMessages[3].SetActive(true); //Show message "Battery Recharged!"
 
                 }
 
