@@ -140,8 +140,8 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BottomGradient: {r: 0.09304912, g: 0.09655082, b: 0.3867925, a: 1}
-    - _CloudColorBottom: {r: 0.050980397, g: 0.13725491, b: 0.52156866, a: 0}
-    - _CloudColorTop: {r: 0.08627451, g: 0.3019608, b: 0.65882355, a: 1}
+    - _CloudColorBottom: {r: 0.050980397, g: 0.0627451, b: 0.5686275, a: 0}
+    - _CloudColorTop: {r: 0.504717, g: 0.6912962, b: 1, a: 1}
     - _CloudFade: {r: -0.05, g: 0.41, b: 0, a: 0}
     - _CloudSpeed: {r: 0.05, g: 0.04, b: 0, a: 0}
     - _Color: {r: 1, g: 0, b: 0, a: 1}
