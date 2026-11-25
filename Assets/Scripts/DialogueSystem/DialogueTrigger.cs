@@ -44,10 +44,7 @@ public class DialogueTrigger : MonoBehaviour
         //De dialogue box sluit als de collider met de player tag het veld verlaat
         if (other.CompareTag("Player"))
         {
-            hasInteracted = false;
             player_detection = false;
-            hasInteracted = false;
-            dialogueUI.CloseDialogueBox();
         }
     }
 }

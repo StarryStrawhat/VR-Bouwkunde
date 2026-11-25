@@ -80,7 +80,7 @@
                     "name": "Next",
                     "type": "Button",
                     "id": "b7230bb6-fc9b-4f52-8b25-f5e19cb2c2ba",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false,
@@ -110,6 +110,16 @@
                     "name": "ClueLogToggle",
                     "type": "Button",
                     "id": "23956a16-87d7-4e61-8add-f71f1f0f2cba",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                },
+                {
+                    "name": "ClickItem",
+                    "type": "Button",
+                    "id": "b82e94e3-9294-413a-a12e-7a8e4435d944",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -533,6 +543,28 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "ClueLogToggle",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf36b56a-2ea7-49e0-8a7f-6ec7667595bd",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "ClickItem",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c8874e22-f6cc-4e3d-8de8-733e30c3f807",
+                    "path": "<QuestTouchPlusController>/triggerPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "ClickItem",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -21,7 +21,7 @@ public class FirstPersonCamera : MonoBehaviour
         // Zoek de Camera die als child van dit object staat.
         mainCamera = GetComponentInChildren<Camera>();
 
-        // Vergrendel de cursor en maak hem onzichtbaar   DIT MOET LATER WEER AAN STAAN, MAAR ANDERS KUNNEN WE NIET CLUE SYSTEEM IN DEMOSCENE GEBRUIKEN
+        // Vergrendel de cursor en maak hem onzichtbaar 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -46,5 +46,17 @@ public class FirstPersonCamera : MonoBehaviour
 
         // Draai het object horizontaal zodat je links en rechts kunt kijken.
         transform.rotation *= Quaternion.Euler(0, mouseDelta.x * LookSensitivity, 0);
+    }
+
+    //Zorgt dat de Camera op freeze gaat
+    public void FreezeCam()
+    {
+        LookSensitivity = 0f;
+    }
+
+    //Zorgt dat de camera unfreezed en naar de normale sensitivity gaat. (Moet nog ff kijken naar hoe ik het hou op de standard sens maar das voor later)
+    public void UnFreezeCam()
+    {
+        LookSensitivity = 0.2f;
     }
 }
